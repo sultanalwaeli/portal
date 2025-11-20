@@ -82,6 +82,14 @@
       margin: 15px 0;
       text-align: center;
     }
+    .error-message {
+      background: rgba(244, 67, 54, 0.2);
+      border: 1px solid rgba(244, 67, 54, 0.5);
+      border-radius: 10px;
+      padding: 15px;
+      margin: 15px 0;
+      text-align: center;
+    }
     .question-card {
       background: rgba(255, 255, 255, 0.1);
       border-radius: 12px;
@@ -520,9 +528,12 @@
   </div>
 
   <script>
+    // رابط Google Apps Script الخاص بك
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxzJFAk_8_AtnfPZdKVT2NXkwe1ZNnACk9yISzOcIaHr9THnytcWtdrk4vlCeStHE9-/exec';
+
     // دالة العودة لمنصة التواصل
     function goBack() {
-      window.location.href = "index.html"; // تغيير هذا الرابط حسب اسم ملف المنصة الرئيسية
+      window.location.href = "index.html";
     }
 
     // دالة إظهار الرسائل
@@ -537,7 +548,6 @@
       container.innerHTML = '';
       container.appendChild(messageDiv);
       
-      // إزالة الرسالة بعد 5 ثواني
       setTimeout(() => {
         messageDiv.remove();
       }, 5000);
@@ -550,6 +560,21 @@
       setTimeout(() => {
         toast.classList.remove('show');
       }, 3500);
+    }
+
+    // دالة جمع البيانات من النموذج
+    function collectFormData(form) {
+      const formData = new FormData(form);
+      const data = {};
+      
+      for (let [key, value] of formData.entries()) {
+        data[key] = value;
+      }
+      
+      // إضافة الطابع الزمني
+      data.timestamp = new Date().toLocaleString('ar-EG');
+      
+      return data;
     }
 
     // معالجة إرسال النموذج
@@ -581,20 +606,21 @@
       submitBtn.disabled = true;
 
       try {
-        // جمع البيانات من النموذج
-        const formData = new FormData(this);
-        const data = {
-          timestamp: new Date().toLocaleString('ar-EG'),
-          guardian_type: formData.get('guardian_type'),
-          student_grade: formData.get('student_grade'),
-          students_count: formData.get('students_count'),
-          attendance_type: formData.get('attendance_type'),
-          // جمع باقي البيانات
-          ...Object.fromEntries(formData)
-        };
+        // جمع البيانات
+        const formData = collectFormData(this);
+        
+        // إرسال البيانات إلى Google Apps Script
+        const response = await fetch(SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: JSON.stringify(formData),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
 
-        // هنا سيتم إرسال البيانات إلى Google Sheets
-        await submitToGoogleSheets(data);
+        // نظرًا لأننا نستخدم no-cors، لا يمكننا قراءة الاستجابة
+        // ولكن نعتبر أن الإرسال ناجح إذا لم يكن هناك خطأ
         showToast();
         this.reset();
         
@@ -607,43 +633,8 @@
       }
     });
 
-    // دالة إرسال البيانات إلى Google Sheets
-    async function submitToGoogleSheets(data) {
-      // رابط النموذج الخاص بـ Google Forms
-      const FORM_URL = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID_HERE/formResponse';
-      
-      // معرفات الحقول في Google Form (يجب استبدالها بالمعرفات الحقيقية)
-      const FIELD_IDS = {
-        timestamp: 'entry.123456789',
-        guardian_type: 'entry.987654321',
-        student_grade: 'entry.456789123',
-        students_count: 'entry.321654987',
-        attendance_type: 'entry.654987321',
-        // أضف باقي المعرفات هنا
-      };
-
-      const formData = new URLSearchParams();
-      for (const [key, value] of Object.entries(data)) {
-        if (FIELD_IDS[key]) {
-          formData.append(FIELD_IDS[key], value);
-        }
-      }
-
-      const response = await fetch(FORM_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: formData
-      });
-
-      return response;
-    }
-
     // إضافة تأثيرات تفاعلية
     document.addEventListener('DOMContentLoaded', function() {
-      // تأثيرات عند التركيز على الحقول
       const inputs = document.querySelectorAll('input, select, textarea');
       inputs.forEach(input => {
         input.addEventListener('focus', function() {
