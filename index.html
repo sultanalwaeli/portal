@@ -198,6 +198,19 @@
       transform: translateX(50%) translateY(0);
       opacity: 1;
     }
+    .section-indicator {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin-left: 10px;
+    }
+    .section-1 { background: #4A90E2; }
+    .section-2 { background: #facc15; }
+    .section-3 { background: #10b981; }
+    .section-4 { background: #8b5cf6; }
+    .section-5 { background: #ef4444; }
+    .section-6 { background: #06b6d4; }
   </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-4 py-8">
@@ -245,7 +258,10 @@
       
       <!-- القسم الأول: البيانات العامة -->
       <div>
-        <div class="section-title">القسم الأول: البيانات العامة</div>
+        <div class="section-title">
+          <span class="section-indicator section-1"></span>
+          القسم الأول: البيانات العامة
+        </div>
 
         <div class="question-card">
           <label class="question-label">1) نوع ولي الأمر<span class="required">*</span></label>
@@ -269,17 +285,17 @@
           <label class="question-label">2) الصف الذي يدرس فيه ابنكم في المدرسة<span class="required">*</span></label>
           <select name="student_grade" class="w-full p-3 rounded-lg select-field focus:outline-none" required>
             <option value="" selected disabled>اختر الصف...</option>
-            <option value="الخامس">الصف الخامس</option>
-            <option value="السادس">الصف السادس</option>
-            <option value="السابع">الصف السابع</option>
-            <option value="الثامن">الصف الثامن</option>
-            <option value="التاسع">الصف التاسع</option>
-            <option value="العاشر">الصف العاشر</option>
+            <option value="الصف الخامس">الصف الخامس</option>
+            <option value="الصف السادس">الصف السادس</option>
+            <option value="الصف السابع">الصف السابع</option>
+            <option value="الصف الثامن">الصف الثامن</option>
+            <option value="الصف التاسع">الصف التاسع</option>
+            <option value="الصف العاشر">الصف العاشر</option>
           </select>
         </div>
 
         <div class="question-card">
-          <label class="question-label">3) عدد الأبناء الدارسين في المدرسة<span class="required">*</span></label>
+          <label class="question-label">3) عدد الأبناء الدارسين في مدرسة محمد بن سليمان الغافري<span class="required">*</span></label>
           <div class="options-row">
             <label class="chip-option">
               <input type="radio" name="students_count" value="1" required />
@@ -304,12 +320,12 @@
           <label class="question-label">4) كيفية مشاركتكم في اللقاء التربوي الأخير<span class="required">*</span></label>
           <div class="options-row">
             <label class="chip-option">
-              <input type="radio" name="attendance_type" value="حضرت شخصيًا" required />
-              <span class="chip-label">حضرت شخصيًا</span>
+              <input type="radio" name="attendance_type" value="حضرت شخصيًا في المدرسة" required />
+              <span class="chip-label">حضرت شخصيًا في المدرسة</span>
             </label>
             <label class="chip-option">
-              <input type="radio" name="attendance_type" value="تواصل هاتفي فقط" required />
-              <span class="chip-label">تواصل هاتفي فقط</span>
+              <input type="radio" name="attendance_type" value="تم التواصل هاتفيًا فقط" required />
+              <span class="chip-label">تم التواصل هاتفيًا فقط</span>
             </label>
             <label class="chip-option">
               <input type="radio" name="attendance_type" value="حضرت وتم التواصل أيضًا" required />
@@ -325,32 +341,19 @@
 
       <!-- القسم الثاني: تقييم التنظيم العام للقاء -->
       <div>
-        <div class="section-title">القسم الثاني: تقييم التنظيم العام للقاء</div>
+        <div class="section-title">
+          <span class="section-indicator section-2"></span>
+          القسم الثاني: تقييم التنظيم العام للقاء
+        </div>
 
-        <!-- أسئلة 5–9 -->
         <div class="question-card">
           <label class="question-label">5) وضوح الدعوة وشرح هدف اللقاء</label>
           <div class="options-row">
-            <label class="chip-option">
-              <input type="radio" name="q5" value="1" required />
-              <span class="chip-label">1</span>
-            </label>
-            <label class="chip-option">
-              <input type="radio" name="q5" value="2" required />
-              <span class="chip-label">2</span>
-            </label>
-            <label class="chip-option">
-              <input type="radio" name="q5" value="3" required />
-              <span class="chip-label">3</span>
-            </label>
-            <label class="chip-option">
-              <input type="radio" name="q5" value="4" required />
-              <span class="chip-label">4</span>
-            </label>
-            <label class="chip-option">
-              <input type="radio" name="q5" value="5" required />
-              <span class="chip-label">5</span>
-            </label>
+            <label class="chip-option"><input type="radio" name="q5" value="1" required /><span class="chip-label">1</span></label>
+            <label class="chip-option"><input type="radio" name="q5" value="2" required /><span class="chip-label">2</span></label>
+            <label class="chip-option"><input type="radio" name="q5" value="3" required /><span class="chip-label">3</span></label>
+            <label class="chip-option"><input type="radio" name="q5" value="4" required /><span class="chip-label">4</span></label>
+            <label class="chip-option"><input type="radio" name="q5" value="5" required /><span class="chip-label">5</span></label>
           </div>
         </div>
 
@@ -377,7 +380,7 @@
         </div>
 
         <div class="question-card">
-          <label class="question-label">8) مدى ملاءمة مدة اللقاء (لا هو قصير جدًا ولا طويل)</label>
+          <label class="question-label">8) سهولة استخدام التطبيق الإلكتروني لتسجيل الحضور</label>
           <div class="options-row">
             <label class="chip-option"><input type="radio" name="q8" value="1" required /><span class="chip-label">1</span></label>
             <label class="chip-option"><input type="radio" name="q8" value="2" required /><span class="chip-label">2</span></label>
@@ -386,15 +389,9 @@
             <label class="chip-option"><input type="radio" name="q8" value="5" required /><span class="chip-label">5</span></label>
           </div>
         </div>
-      </div>
 
-      <!-- القسم الثالث: جودة المحتوى والنقاش -->
-      <div>
-        <div class="section-title">القسم الثالث: جودة المحتوى والنقاش</div>
-
-        <!-- 10–15 -->
         <div class="question-card">
-          <label class="question-label">9) وضوح شرح المعلم لدرجات ابنكم ومستواه الدراسي</label>
+          <label class="question-label">9) مدى ملاءمة مدة اللقاء (لا هو قصير جدًا ولا طويل)</label>
           <div class="options-row">
             <label class="chip-option"><input type="radio" name="q9" value="1" required /><span class="chip-label">1</span></label>
             <label class="chip-option"><input type="radio" name="q9" value="2" required /><span class="chip-label">2</span></label>
@@ -403,9 +400,17 @@
             <label class="chip-option"><input type="radio" name="q9" value="5" required /><span class="chip-label">5</span></label>
           </div>
         </div>
+      </div>
+
+      <!-- القسم الثالث: جودة المحتوى والنقاش -->
+      <div>
+        <div class="section-title">
+          <span class="section-indicator section-3"></span>
+          القسم الثالث: جودة المحتوى والنقاش
+        </div>
 
         <div class="question-card">
-          <label class="question-label">10) وضوح شرح نقاط القوة لدى ابنكم</label>
+          <label class="question-label">10) وضوح شرح المعلم لدرجات ابنكم ومستواه الدراسي</label>
           <div class="options-row">
             <label class="chip-option"><input type="radio" name="q10" value="1" required /><span class="chip-label">1</span></label>
             <label class="chip-option"><input type="radio" name="q10" value="2" required /><span class="chip-label">2</span></label>
@@ -416,7 +421,7 @@
         </div>
 
         <div class="question-card">
-          <label class="question-label">11) وضوح شرح نقاط الضعف وخطط المدرسة لمعالجتها</label>
+          <label class="question-label">11) وضوح شرح نقاط القوة لدى ابنكم</label>
           <div class="options-row">
             <label class="chip-option"><input type="radio" name="q11" value="1" required /><span class="chip-label">1</span></label>
             <label class="chip-option"><input type="radio" name="q11" value="2" required /><span class="chip-label">2</span></label>
@@ -427,7 +432,7 @@
         </div>
 
         <div class="question-card">
-          <label class="question-label">12) إتاحة الفرصة لكم لطرح الأسئلة والاستفسارات</label>
+          <label class="question-label">12) وضوح شرح نقاط الضعف وخطط المدرسة لمعالجتها</label>
           <div class="options-row">
             <label class="chip-option"><input type="radio" name="q12" value="1" required /><span class="chip-label">1</span></label>
             <label class="chip-option"><input type="radio" name="q12" value="2" required /><span class="chip-label">2</span></label>
@@ -436,14 +441,9 @@
             <label class="chip-option"><input type="radio" name="q12" value="5" required /><span class="chip-label">5</span></label>
           </div>
         </div>
-      </div>
-
-      <!-- القسم الرابع: الرضا العام -->
-      <div>
-        <div class="section-title">القسم الرابع: الرضا العام عن اللقاء</div>
 
         <div class="question-card">
-          <label class="question-label">13) تقييمكم العام للقاء التربوي</label>
+          <label class="question-label">13) إتاحة الفرصة لكم لطرح الأسئلة والاستفسارات</label>
           <div class="options-row">
             <label class="chip-option"><input type="radio" name="q13" value="1" required /><span class="chip-label">1</span></label>
             <label class="chip-option"><input type="radio" name="q13" value="2" required /><span class="chip-label">2</span></label>
@@ -454,43 +454,154 @@
         </div>
 
         <div class="question-card">
-          <label class="question-label">14) مدى احتمال حضوركم لقاءات تربوية قادمة</label>
+          <label class="question-label">14) شعوركم بأن اللقاء قدّم لكم صورة أوضح عن وضع ابنكم الدراسي</label>
           <div class="options-row">
-            <label class="chip-option"><input type="radio" name="q14" value="ضعيف جدًا" required /><span class="chip-label">ضعيف جدًا</span></label>
-            <label class="chip-option"><input type="radio" name="q14" value="ضعيف" required /><span class="chip-label">ضعيف</span></label>
-            <label class="chip-option"><input type="radio" name="q14" value="متوسط" required /><span class="chip-label">متوسط</span></label>
-            <label class="chip-option"><input type="radio" name="q14" value="قوي" required /><span class="chip-label">قوي</span></label>
-            <label class="chip-option"><input type="radio" name="q14" value="قوي جدًا" required /><span class="chip-label">قوي جدًا</span></label>
+            <label class="chip-option"><input type="radio" name="q14" value="1" required /><span class="chip-label">1</span></label>
+            <label class="chip-option"><input type="radio" name="q14" value="2" required /><span class="chip-label">2</span></label>
+            <label class="chip-option"><input type="radio" name="q14" value="3" required /><span class="chip-label">3</span></label>
+            <label class="chip-option"><input type="radio" name="q14" value="4" required /><span class="chip-label">4</span></label>
+            <label class="chip-option"><input type="radio" name="q14" value="5" required /><span class="chip-label">5</span></label>
           </div>
         </div>
 
         <div class="question-card">
-          <label class="question-label">15) هل تنصحون أولياء أمور آخرين بالحضور في اللقاءات القادمة؟</label>
+          <label class="question-label">15) شعوركم بأن اللقاء قدّم لكم صورة أوضح عن سلوك ابنكم في المدرسة</label>
           <div class="options-row">
-            <label class="chip-option"><input type="radio" name="q15" value="نعم" required /><span class="chip-label">نعم</span></label>
-            <label class="chip-option"><input type="radio" name="q15" value="ربما" required /><span class="chip-label">ربما</span></label>
-            <label class="chip-option"><input type="radio" name="q15" value="لا" required /><span class="chip-label">لا</span></label>
+            <label class="chip-option"><input type="radio" name="q15" value="1" required /><span class="chip-label">1</span></label>
+            <label class="chip-option"><input type="radio" name="q15" value="2" required /><span class="chip-label">2</span></label>
+            <label class="chip-option"><input type="radio" name="q15" value="3" required /><span class="chip-label">3</span></label>
+            <label class="chip-option"><input type="radio" name="q15" value="4" required /><span class="chip-label">4</span></label>
+            <label class="chip-option"><input type="radio" name="q15" value="5" required /><span class="chip-label">5</span></label>
           </div>
         </div>
       </div>
 
-      <!-- القسم الخامس: ملاحظاتكم واقتراحاتكم -->
+      <!-- القسم الرابع: التواصل والشراكة مع المدرسة -->
       <div>
-        <div class="section-title">القسم الخامس: ملاحظاتكم واقتراحاتكم</div>
-
-        <div class="question-card">
-          <label class="question-label">16) ما أكثر ما أعجبكم في هذا اللقاء التربوي؟</label>
-          <textarea name="q16" class="w-full p-3 rounded-lg textarea-field focus:outline-none" placeholder="اكتب ما أعجبك في اللقاء، تنظيمًا أو محتوى أو أسلوبًا..."></textarea>
+        <div class="section-title">
+          <span class="section-indicator section-4"></span>
+          القسم الرابع: التواصل والشراكة مع المدرسة
         </div>
 
         <div class="question-card">
-          <label class="question-label">17) ما الجوانب التي ترون أنها تحتاج إلى تحسين في اللقاءات القادمة؟</label>
-          <textarea name="q17" class="w-full p-3 rounded-lg textarea-field focus:outline-none" placeholder="أذكر الجوانب التي يمكن تطويرها من وجهة نظرك..."></textarea>
+          <label class="question-label">16) رضاكم عن قنوات التواصل الحالية بين المدرسة وأولياء الأمور</label>
+          <div class="options-row">
+            <label class="chip-option"><input type="radio" name="q16" value="1" required /><span class="chip-label">1</span></label>
+            <label class="chip-option"><input type="radio" name="q16" value="2" required /><span class="chip-label">2</span></label>
+            <label class="chip-option"><input type="radio" name="q16" value="3" required /><span class="chip-label">3</span></label>
+            <label class="chip-option"><input type="radio" name="q16" value="4" required /><span class="chip-label">4</span></label>
+            <label class="chip-option"><input type="radio" name="q16" value="5" required /><span class="chip-label">5</span></label>
+          </div>
         </div>
 
         <div class="question-card">
-          <label class="question-label">18) أي ملاحظات أو رسائل إضافية تودون توجيهها لإدارة المدرسة أو المعلمين</label>
-          <textarea name="q18" class="w-full p-3 rounded-lg textarea-field focus:outline-none" placeholder="اكتب رسالتك بحرية..."></textarea>
+          <label class="question-label">17) رضاكم عن منصة "تواصل" ودورها في متابعة أبنائكم</label>
+          <div class="options-row">
+            <label class="chip-option"><input type="radio" name="q17" value="1" required /><span class="chip-label">1</span></label>
+            <label class="chip-option"><input type="radio" name="q17" value="2" required /><span class="chip-label">2</span></label>
+            <label class="chip-option"><input type="radio" name="q17" value="3" required /><span class="chip-label">3</span></label>
+            <label class="chip-option"><input type="radio" name="q17" value="4" required /><span class="chip-label">4</span></label>
+            <label class="chip-option"><input type="radio" name="q17" value="5" required /><span class="chip-label">5</span></label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <label class="question-label">18) مدى شعوركم بأن المدرسة تستمع لملاحظات واقتراحات أولياء الأمور</label>
+          <div class="options-row">
+            <label class="chip-option"><input type="radio" name="q18" value="1" required /><span class="chip-label">1</span></label>
+            <label class="chip-option"><input type="radio" name="q18" value="2" required /><span class="chip-label">2</span></label>
+            <label class="chip-option"><input type="radio" name="q18" value="3" required /><span class="chip-label">3</span></label>
+            <label class="chip-option"><input type="radio" name="q18" value="4" required /><span class="chip-label">4</span></label>
+            <label class="chip-option"><input type="radio" name="q18" value="5" required /><span class="chip-label">5</span></label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <label class="question-label">19) مدى شعوركم بأنكم شركاء حقيقيون في القرارات التي تخص أبناءكم</label>
+          <div class="options-row">
+            <label class="chip-option"><input type="radio" name="q19" value="1" required /><span class="chip-label">1</span></label>
+            <label class="chip-option"><input type="radio" name="q19" value="2" required /><span class="chip-label">2</span></label>
+            <label class="chip-option"><input type="radio" name="q19" value="3" required /><span class="chip-label">3</span></label>
+            <label class="chip-option"><input type="radio" name="q19" value="4" required /><span class="chip-label">4</span></label>
+            <label class="chip-option"><input type="radio" name="q19" value="5" required /><span class="chip-label">5</span></label>
+          </div>
+        </div>
+      </div>
+
+      <!-- القسم الخامس: الرضا العام عن اللقاء -->
+      <div>
+        <div class="section-title">
+          <span class="section-indicator section-5"></span>
+          القسم الخامس: الرضا العام عن اللقاء
+        </div>
+
+        <div class="question-card">
+          <label class="question-label">20) تقييمكم العام للقاء التربوي</label>
+          <div class="options-row">
+            <label class="chip-option"><input type="radio" name="q20" value="1" required /><span class="chip-label">1</span></label>
+            <label class="chip-option"><input type="radio" name="q20" value="2" required /><span class="chip-label">2</span></label>
+            <label class="chip-option"><input type="radio" name="q20" value="3" required /><span class="chip-label">3</span></label>
+            <label class="chip-option"><input type="radio" name="q20" value="4" required /><span class="chip-label">4</span></label>
+            <label class="chip-option"><input type="radio" name="q20" value="5" required /><span class="chip-label">5</span></label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <label class="question-label">21) مدى احتمال حضوركم لقاءات تربوية قادمة</label>
+          <div class="options-row">
+            <label class="chip-option"><input type="radio" name="q21" value="ضعيف جدًا" required /><span class="chip-label">ضعيف جدًا</span></label>
+            <label class="chip-option"><input type="radio" name="q21" value="ضعيف" required /><span class="chip-label">ضعيف</span></label>
+            <label class="chip-option"><input type="radio" name="q21" value="متوسط" required /><span class="chip-label">متوسط</span></label>
+            <label class="chip-option"><input type="radio" name="q21" value="قوي" required /><span class="chip-label">قوي</span></label>
+            <label class="chip-option"><input type="radio" name="q21" value="قوي جدًا" required /><span class="chip-label">قوي جدًا</span></label>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <label class="question-label">22) كم تقيمون تجربتكم في اللقاء من 10؟</label>
+          <input type="number" name="q22" min="1" max="10" class="w-full p-3 rounded-lg input-field focus:outline-none" placeholder="اكتب رقمًا من 1 إلى 10" required />
+        </div>
+
+        <div class="question-card">
+          <label class="question-label">23) هل تنصحون أولياء أمور آخرين بالحضور في اللقاءات القادمة؟</label>
+          <div class="options-row">
+            <label class="chip-option"><input type="radio" name="q23" value="نعم" required /><span class="chip-label">نعم</span></label>
+            <label class="chip-option"><input type="radio" name="q23" value="ربما" required /><span class="chip-label">ربما</span></label>
+            <label class="chip-option"><input type="radio" name="q23" value="لا" required /><span class="chip-label">لا</span></label>
+          </div>
+        </div>
+      </div>
+
+      <!-- القسم السادس: ملاحظاتكم واقتراحاتكم -->
+      <div>
+        <div class="section-title">
+          <span class="section-indicator section-6"></span>
+          القسم السادس: ملاحظاتكم واقتراحاتكم
+        </div>
+
+        <div class="question-card">
+          <label class="question-label">24) ما أكثر ما أعجبكم في هذا اللقاء التربوي؟</label>
+          <textarea name="q24" class="w-full p-3 rounded-lg textarea-field focus:outline-none" placeholder="اكتب ما أعجبك في اللقاء، تنظيمًا أو محتوى أو أسلوبًا..."></textarea>
+        </div>
+
+        <div class="question-card">
+          <label class="question-label">25) ما الجوانب التي ترون أنها تحتاج إلى تحسين في اللقاءات القادمة؟</label>
+          <textarea name="q25" class="w-full p-3 rounded-lg textarea-field focus:outline-none" placeholder="أذكر الجوانب التي يمكن تطويرها من وجهة نظرك..."></textarea>
+        </div>
+
+        <div class="question-card">
+          <label class="question-label">26) ما اقتراحاتكم لزيادة نسبة حضور أولياء الأمور مستقبلًا؟</label>
+          <textarea name="q26" class="w-full p-3 rounded-lg textarea-field focus:outline-none" placeholder="مثل تغيير الوقت، تنظيم فعاليات إضافية، إرسال تذكيرات مبكرة..."></textarea>
+        </div>
+
+        <div class="question-card">
+          <label class="question-label">27) هل ترون أهمية إضافة برامج أو ورش قصيرة لأولياء الأمور أثناء اللقاء؟ وما الموضوعات التي تقترحونها؟</label>
+          <textarea name="q27" class="w-full p-3 rounded-lg textarea-field focus:outline-none" placeholder="مثل: التعامل مع الأبناء في مرحلة المراهقة، إدارة الوقت، متابعة الواجبات..."></textarea>
+        </div>
+
+        <div class="question-card">
+          <label class="question-label">28) أي ملاحظات أو رسائل إضافية تودون توجيهها لإدارة المدرسة أو المعلمين</label>
+          <textarea name="q28" class="w-full p-3 rounded-lg textarea-field focus:outline-none" placeholder="اكتب رسالتك بحرية..."></textarea>
         </div>
       </div>
 
@@ -529,7 +640,7 @@
 
   <script>
     // رابط Google Apps Script الخاص بك
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxzJFAk_8_AtnfPZdKVT2NXkwe1ZNnACk9yISzOcIaHr9THnytcWtdrk4vlCeStHE9-/exec';
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxwlOkj0z7j5GY68fWHOfCCwEGR2PDNGOutmO5fvup2IL2KKXhPs7ppgybKzn8_kdG4/exec';
 
     // دالة العودة لمنصة التواصل
     function goBack() {
