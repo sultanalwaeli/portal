@@ -1,761 +1,152 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>استبيان رضا أولياء الأمور عن الملتقى التربوي</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    body {
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      font-family: 'El Messiri', sans-serif;
-      color: #fff;
-      min-height: 100vh;
-    }
-    .card {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .logo-glow {
-      filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
-    }
-    .input-field {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      color: #fff;
-    }
-    .input-field:focus {
-      background: rgba(255, 255, 255, 0.2);
-      border-color: #ffd700;
-    }
-    .textarea-field {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      color: #fff;
-      resize: vertical;
-      min-height: 120px;
-    }
-    .textarea-field:focus {
-      background: rgba(255, 255, 255, 0.2);
-      border-color: #ffd700;
-    }
-    .select-field {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      color: #fff;
-    }
-    .select-field:focus {
-      background: rgba(255, 255, 255, 0.2);
-      border-color: #ffd700;
-    }
-    .button-primary {
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      color: #1e3c72;
-      font-weight: bold;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .button-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-    .button-back {
-      background: linear-gradient(135deg, #4A90E2, #50A5E2);
-      color: #fff;
-      font-weight: bold;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .button-back:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-    .success-message {
-      background: rgba(76, 175, 80, 0.2);
-      border: 1px solid rgba(76, 175, 80, 0.5);
-      border-radius: 10px;
-      padding: 15px;
-      margin: 15px 0;
-      text-align: center;
-    }
-    .error-message {
-      background: rgba(244, 67, 54, 0.2);
-      border: 1px solid rgba(244, 67, 54, 0.5);
-      border-radius: 10px;
-      padding: 15px;
-      margin: 15px 0;
-      text-align: center;
-    }
-    .question-card {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 15px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    .section-title {
-      color: #ffd700;
-      font-size: 1.3rem;
-      font-weight: bold;
-      margin: 25px 0 15px 0;
-      padding-right: 15px;
-      border-right: 4px solid #ffd700;
-    }
-    .question-label {
-      color: #fff;
-      font-size: 1.1rem;
-      margin-bottom: 15px;
-      display: block;
-    }
-    .options-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .chip-option {
-      position: relative;
-    }
-    .chip-option input[type="radio"] {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-    }
-    .chip-label {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 20px;
-      border-radius: 25px;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      min-width: 70px;
-      text-align: center;
-      font-size: 1rem;
-    }
-    .chip-option input:checked + .chip-label {
-      border-color: #ffd700;
-      background: rgba(255, 215, 0, 0.2);
-      color: #ffd700;
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-    }
-    .rating-scale {
-      display: flex;
-      justify-content: space-between;
-      margin: 20px 0;
-      padding: 0 10px;
-    }
-    .scale-item {
-      text-align: center;
-      flex: 1;
-    }
-    .scale-number {
-      display: block;
-      width: 40px;
-      height: 40px;
-      line-height: 40px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      margin: 0 auto 5px;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      transition: all 0.3s ease;
-    }
-    .chip-option input:checked ~ .scale-number {
-      background: rgba(255, 215, 0, 0.3);
-      border-color: #ffd700;
-      color: #ffd700;
-    }
-    .scale-label {
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.7);
-    }
-    .required {
-      color: #ff6b6b;
-      margin-right: 5px;
-    }
-    .toast {
-      position: fixed;
-      bottom: 20px;
-      right: 50%;
-      transform: translateX(50%) translateY(100px);
-      background: rgba(76, 175, 80, 0.9);
-      color: white;
-      padding: 15px 25px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      opacity: 0;
-      transition: all 0.5s ease;
-      z-index: 1000;
-    }
-    .toast.show {
-      transform: translateX(50%) translateY(0);
-      opacity: 1;
-    }
-    .section-indicator {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      margin-left: 10px;
-    }
-    .section-1 { background: #4A90E2; }
-    .section-2 { background: #facc15; }
-    .section-3 { background: #10b981; }
-    .section-4 { background: #8b5cf6; }
-    .section-5 { background: #ef4444; }
-    .section-6 { background: #06b6d4; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102f52">
+<title>بوابة ولي الأمر | مدرسة أبو الدرداء</title>
+<style>
+:root{--navy:#102f52;--navy2:#1c527e;--gold:#b99046;--bg:#f4f7fa;--line:#e5eaf0;--ink:#17263a;--muted:#718096;--green:#147a5b}
+*{box-sizing:border-box} body{margin:0;font-family:Tahoma,Arial,sans-serif;color:var(--ink);background:linear-gradient(180deg,#edf3f7,#f8fafc 45%,#f4f7fa);min-height:100vh}
+button,input{font:inherit}.hidden{display:none!important}.shell{width:min(1050px,calc(100% - 24px));margin:auto;padding:18px 0 40px}
+.brand{display:flex;align-items:center;gap:15px;background:#fff;border-radius:24px;padding:14px 18px;box-shadow:0 18px 50px rgba(16,47,82,.1);margin-bottom:18px}
+.logo{width:72px;height:72px;object-fit:contain;border:1px solid var(--line);border-radius:17px;padding:5px}.brandtext{flex:1}.small{font-size:12px;color:#667085;line-height:1.7}.school{font-size:19px;font-weight:900;color:var(--navy)}
+.hero{background:linear-gradient(135deg,var(--navy),var(--navy2));border-radius:29px;padding:38px;box-shadow:0 24px 60px rgba(16,47,82,.18);display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.hero h1{color:#fff;font-size:36px;margin:0 0 8px}.hero p{color:#d9e5ef;line-height:1.9}.gold{width:58px;height:4px;background:var(--gold);border-radius:5px;margin:17px 0}
+.login{background:#fff;border-radius:23px;padding:25px}.login h2{color:var(--navy);margin:0 0 7px}.login p{color:var(--muted);font-size:13px;margin:0 0 20px}
+label{display:block;font-size:13px;font-weight:800;margin-bottom:7px}.input{width:100%;padding:14px;border:1px solid #dce3ea;border-radius:13px;background:#fbfcfd;outline:none}
+.primary{border:0;border-radius:13px;background:var(--navy);color:#fff;padding:13px 17px;font-weight:900;cursor:pointer}.full{width:100%;margin-top:12px}
+.status{padding:12px 15px;border-radius:12px;margin-bottom:15px;font-size:13px}.err{background:#fff0ef;color:#b42318}.ok{background:#eaf8f2;color:#147a5b}
+.card{background:#fff;border:1px solid var(--line);border-radius:23px;padding:21px;box-shadow:0 15px 45px rgba(16,47,82,.08);margin-bottom:15px}
+.studentHead{display:flex;justify-content:space-between;gap:15px;align-items:center}.studentName{font-size:24px;font-weight:900;color:var(--navy)}.meta{color:var(--muted);font-size:13px;margin-top:7px}.logout{border:1px solid #dce3ea;background:#fff;color:var(--navy);padding:11px 15px;border-radius:12px;font-weight:800;cursor:pointer}
+.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:17px}.stat{background:#f7f9fb;border-radius:16px;padding:15px}.stat strong{display:block;color:var(--navy);font-size:20px}.stat span{font-size:11px;color:var(--muted)}
+.subject{overflow:hidden}.subjectTitle{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:15px}.subjectTitle h3{margin:0;color:var(--navy);font-size:20px}.pill{font-size:11px;background:#eef4f8;color:var(--navy);border-radius:999px;padding:6px 10px}
+.grades{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.grade{border:1px solid #e8edf2;border-radius:15px;padding:12px;background:#fbfcfd}.gradeName{font-size:12px;color:#667085;min-height:32px}.gradeValue{font-size:20px;font-weight:900;color:var(--navy);margin-top:5px}.emptyValue{color:#b2bac5}
+.note{margin-top:13px;background:#fff8eb;border:1px solid #f3e3bf;border-radius:14px;padding:13px;color:#805b20;font-size:13px;line-height:1.8}.noNote{background:#f7f9fb;border-color:#edf0f3;color:#98a2b3}
+.notice{font-size:12px;color:#667085;line-height:1.8;text-align:center;margin:18px auto;max-width:750px}.empty{text-align:center;padding:30px;color:#98a2b3}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding:23px}.hero h1{font-size:28px}.grades{grid-template-columns:repeat(2,1fr)}.summary{grid-template-columns:1fr 1fr}.studentHead{align-items:flex-start;flex-direction:column}}
+@media(max-width:440px){.grades{grid-template-columns:1fr}.school{font-size:15px}.logo{width:60px;height:60px}}
+</style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-4 py-8">
-  <!-- البطاقة الرئيسية -->
-  <div class="card rounded-lg shadow-2xl p-6 max-w-4xl w-full">
-    <!-- شعار المدرسة -->
-    <div class="text-center mb-6">
-      <img src="https://j.top4top.io/p_3327lje811.jpg" alt="شعار المدرسة" class="mx-auto w-20 h-20 rounded-full shadow-md mb-4 logo-glow">
-      <h1 class="text-2xl font-bold text-gold-500 logo-glow">استبيان رضا أولياء الأمور</h1>
-      <p class="text-gray-300 text-sm logo-glow">عن الملتقى التربوي - مدرسة محمد بن سليمان الغافري</p>
-    </div>
+<body>
+<div class="shell">
+<header class="brand">
+<img class="logo" src="https://c.top4top.io/p_3906f6odb1.jpg" alt="شعار المدرسة">
+<div class="brandtext">
+<div class="small">سلطنة عُمان · وزارة التربية والتعليم<br>المديرية العامة للتربية والتعليم بمحافظة الظاهرة</div>
+<div class="school">مدرسة أبو الدرداء للتعليم الأساسي (5–12)</div>
+</div>
+</header>
 
-    <!-- رسالة ترحيبية -->
-    <div class="mb-6 p-4 bg-gradient-to-l from-blue-500/20 to-purple-500/20 rounded-lg border border-white/20 text-center">
-      <p class="text-lg">🌟 نأمل منكم تعبئة هذا الاستبيان بصدق ووضوح، فآراؤكم تُسهم مباشرة في تطوير اللقاءات التربوية القادمة وخدمات المدرسة لأبنائكم 🌟</p>
-    </div>
+<div id="status"></div>
 
-    <!-- معلومات عامة -->
-    <div class="flex flex-wrap justify-center gap-4 mb-6 text-sm">
-      <div class="bg-black/20 px-4 py-2 rounded-full border border-white/10">العام الدراسي 2025 / 2026</div>
-      <div class="bg-black/20 px-4 py-2 rounded-full border border-white/10">البيانات سرية وتستخدم لأغراض التطوير فقط</div>
-    </div>
+<section id="loginView" class="hero">
+<div>
+<div style="font-size:12px;font-weight:900;color:#d5b56f">PARENT PORTAL</div>
+<h1>بوابة ولي الأمر</h1>
+<div class="gold"></div>
+<p>متابعة أكاديمية موحدة لعرض درجات الطالب وملاحظات معلميه في مختلف المواد الدراسية.</p>
+</div>
+<div class="login">
+<h2>الدخول إلى ملف الطالب</h2>
+<p>أدخل الرقم المدني للطالب لعرض بياناته الأكاديمية.</p>
+<label for="civilId">الرقم المدني للطالب</label>
+<input id="civilId" class="input" inputmode="numeric" autocomplete="off" placeholder="أدخل الرقم المدني">
+<button id="loginBtn" class="primary full" onclick="loadReport()">عرض الملف الأكاديمي</button>
+</div>
+</section>
 
-    <!-- مقياس التقييم -->
-    <div class="bg-black/20 p-4 rounded-lg border border-dashed border-white/20 mb-6 text-center text-sm">
-      <strong>تنبيه حول أسئلة التقييم:</strong>
-      <div class="rating-scale mt-2">
-        <div class="scale-item">
-          <span class="scale-number">1</span>
-          <span class="scale-label">غير راضٍ إطلاقًا</span>
-        </div>
-        <div class="scale-item">
-          <span class="scale-number">3</span>
-          <span class="scale-label">محايد</span>
-        </div>
-        <div class="scale-item">
-          <span class="scale-number">5</span>
-          <span class="scale-label">راضٍ جدًا</span>
-        </div>
-      </div>
-    </div>
+<section id="reportView" class="hidden">
+<div class="card">
+<div class="studentHead">
+<div>
+<div id="studentName" class="studentName"></div>
+<div id="studentMeta" class="meta"></div>
+</div>
+<button class="logout" onclick="logout()">بحث عن طالب آخر</button>
+</div>
+<div class="summary">
+<div class="stat"><strong id="subjectCount">0</strong><span>المواد المعروضة</span></div>
+<div class="stat"><strong id="gradeCount">0</strong><span>درجات مرصودة</span></div>
+<div class="stat"><strong id="noteCount">0</strong><span>ملاحظات المعلمين</span></div>
+</div>
+</div>
+<div id="subjects"></div>
+<div class="notice">هذه البيانات مخصصة للمتابعة الأكاديمية، وتعكس ما تم رصده في سجلات المواد حتى لحظة عرض الصفحة.</div>
+</section>
+</div>
 
-    <!-- نموذج الاستبيان -->
-    <form id="surveyForm" class="space-y-6 text-right">
-      
-      <!-- القسم الأول: البيانات العامة -->
-      <div>
-        <div class="section-title">
-          <span class="section-indicator section-1"></span>
-          القسم الأول: البيانات العامة
-        </div>
+<script>
+const API_URL="https://script.google.com/macros/s/AKfycbxQe9PhtTcVqSdS9B4BOtc08zCu9Zhpa7BknTsxUa6b2kIKWPi1RtKKswRs2GAWU8CNvg/exec";
+const $=id=>document.getElementById(id);
 
-        <div class="question-card">
-          <label class="question-label">1) نوع ولي الأمر<span class="required">*</span></label>
-          <div class="options-row">
-            <label class="chip-option">
-              <input type="radio" name="guardian_type" value="أب" required />
-              <span class="chip-label">أب</span>
-            </label>
-            <label class="chip-option">
-              <input type="radio" name="guardian_type" value="أم" required />
-              <span class="chip-label">أم</span>
-            </label>
-            <label class="chip-option">
-              <input type="radio" name="guardian_type" value="ولي أمر آخر" required />
-              <span class="chip-label">ولي أمر آخر</span>
-            </label>
-          </div>
-        </div>
+function status(msg,type="ok"){
+ $("status").innerHTML=msg?`<div class="status ${type}">${escapeHtml(msg)}</div>`:"";
+}
+function escapeHtml(v){
+ return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+}
+async function callApi(payload){
+ const r=await fetch(API_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(payload)});
+ const text=await r.text();
+ try{return JSON.parse(text)}catch(e){throw new Error("استجابة الخدمة غير صالحة. تحقق من نشر Apps Script.");}
+}
+async function loadReport(){
+ const civilId=$("civilId").value.trim();
+ if(!civilId)return status("يرجى إدخال الرقم المدني للطالب.","err");
+ $("loginBtn").disabled=true;
+ status("جاري جمع بيانات الطالب من سجلات المواد...");
+ try{
+   const data=await callApi({action:"student",civilId});
+   if(!data.success)throw new Error(data.message||"تعذر العثور على بيانات الطالب.");
+   renderReport(data);
+   $("loginView").classList.add("hidden");
+   $("reportView").classList.remove("hidden");
+   status("");
+ }catch(e){status(e.message||"تعذر الاتصال بالخدمة.","err")}
+ finally{$("loginBtn").disabled=false}
+}
+function renderReport(data){
+ const s=data.student||{};
+ $("studentName").textContent=s.name||"الطالب";
+ $("studentMeta").textContent=`الصف/الشعبة: ${s.sheetName||"—"} · الرقم المدني: ${s.civilId||"—"}`;
+ const subjects=(data.subjects||[]);
+ const box=$("subjects"); box.innerHTML="";
+ let gradeCount=0,noteCount=0,successCount=0;
 
-        <div class="question-card">
-          <label class="question-label">2) الصف الذي يدرس فيه ابنكم في المدرسة<span class="required">*</span></label>
-          <select name="student_grade" class="w-full p-3 rounded-lg select-field focus:outline-none" required>
-            <option value="" selected disabled>اختر الصف...</option>
-            <option value="الصف الخامس">الصف الخامس</option>
-            <option value="الصف السادس">الصف السادس</option>
-            <option value="الصف السابع">الصف السابع</option>
-            <option value="الصف الثامن">الصف الثامن</option>
-            <option value="الصف التاسع">الصف التاسع</option>
-            <option value="الصف العاشر">الصف العاشر</option>
-          </select>
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">3) عدد الأبناء الدارسين في مدرسة محمد بن سليمان الغافري<span class="required">*</span></label>
-          <div class="options-row">
-            <label class="chip-option">
-              <input type="radio" name="students_count" value="1" required />
-              <span class="chip-label">1</span>
-            </label>
-            <label class="chip-option">
-              <input type="radio" name="students_count" value="2" required />
-              <span class="chip-label">2</span>
-            </label>
-            <label class="chip-option">
-              <input type="radio" name="students_count" value="3" required />
-              <span class="chip-label">3</span>
-            </label>
-            <label class="chip-option">
-              <input type="radio" name="students_count" value="4 فأكثر" required />
-              <span class="chip-label">4 فأكثر</span>
-            </label>
-          </div>
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">4) كيفية مشاركتكم في اللقاء التربوي الأخير<span class="required">*</span></label>
-          <div class="options-row">
-            <label class="chip-option">
-              <input type="radio" name="attendance_type" value="حضرت شخصيًا في المدرسة" required />
-              <span class="chip-label">حضرت شخصيًا في المدرسة</span>
-            </label>
-            <label class="chip-option">
-              <input type="radio" name="attendance_type" value="تم التواصل هاتفيًا فقط" required />
-              <span class="chip-label">تم التواصل هاتفيًا فقط</span>
-            </label>
-            <label class="chip-option">
-              <input type="radio" name="attendance_type" value="حضرت وتم التواصل أيضًا" required />
-              <span class="chip-label">حضرت وتم التواصل أيضًا</span>
-            </label>
-            <label class="chip-option">
-              <input type="radio" name="attendance_type" value="لم أحضر اللقاء" required />
-              <span class="chip-label">لم أحضر اللقاء</span>
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <!-- القسم الثاني: تقييم التنظيم العام للقاء -->
-      <div>
-        <div class="section-title">
-          <span class="section-indicator section-2"></span>
-          القسم الثاني: تقييم التنظيم العام للقاء
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">5) وضوح الدعوة وشرح هدف اللقاء</label>
-          <div class="options-row">
-            <label class="chip-option"><input type="radio" name="q5" value="1" required /><span class="chip-label">1</span></label>
-            <label class="chip-option"><input type="radio" name="q5" value="2" required /><span class="chip-label">2</span></label>
-            <label class="chip-option"><input type="radio" name="q5" value="3" required /><span class="chip-label">3</span></label>
-            <label class="chip-option"><input type="radio" name="q5" value="4" required /><span class="chip-label">4</span></label>
-            <label class="chip-option"><input type="radio" name="q5" value="5" required /><span class="chip-label">5</span></label>
-          </div>
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">6) مناسبة وقت اللقاء (اليوم والتوقيت)</label>
-          <div class="options-row">
-            <label class="chip-option"><input type="radio" name="q6" value="1" required /><span class="chip-label">1</span></label>
-            <label class="chip-option"><input type="radio" name="q6" value="2" required /><span class="chip-label">2</span></label>
-            <label class="chip-option"><input type="radio" name="q6" value="3" required /><span class="chip-label">3</span></label>
-            <label class="chip-option"><input type="radio" name="q6" value="4" required /><span class="chip-label">4</span></label>
-            <label class="chip-option"><input type="radio" name="q6" value="5" required /><span class="chip-label">5</span></label>
-          </div>
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">7) تنظيم الاستقبال وتوجيه أولياء الأمور داخل المدرسة</label>
-          <div class="options-row">
-            <label class="chip-option"><input type="radio" name="q7" value="1" required /><span class="chip-label">1</span></label>
-            <label class="chip-option"><input type="radio" name="q7" value="2" required /><span class="chip-label">2</span></label>
-            <label class="chip-option"><input type="radio" name="q7" value="3" required /><span class="chip-label">3</span></label>
-            <label class="chip-option"><input type="radio" name="q7" value="4" required /><span class="chip-label">4</span></label>
-            <label class="chip-option"><input type="radio" name="q7" value="5" required /><span class="chip-label">5</span></label>
-          </div>
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">8) سهولة استخدام التطبيق الإلكتروني لتسجيل الحضور</label>
-          <div class="options-row">
-            <label class="chip-option"><input type="radio" name="q8" value="1" required /><span class="chip-label">1</span></label>
-            <label class="chip-option"><input type="radio" name="q8" value="2" required /><span class="chip-label">2</span></label>
-            <label class="chip-option"><input type="radio" name="q8" value="3" required /><span class="chip-label">3</span></label>
-            <label class="chip-option"><input type="radio" name="q8" value="4" required /><span class="chip-label">4</span></label>
-            <label class="chip-option"><input type="radio" name="q8" value="5" required /><span class="chip-label">5</span></label>
-          </div>
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">9) مدى ملاءمة مدة اللقاء (لا هو قصير جدًا ولا طويل)</label>
-          <div class="options-row">
-            <label class="chip-option"><input type="radio" name="q9" value="1" required /><span class="chip-label">1</span></label>
-            <label class="chip-option"><input type="radio" name="q9" value="2" required /><span class="chip-label">2</span></label>
-            <label class="chip-option"><input type="radio" name="q9" value="3" required /><span class="chip-label">3</span></label>
-            <label class="chip-option"><input type="radio" name="q9" value="4" required /><span class="chip-label">4</span></label>
-            <label class="chip-option"><input type="radio" name="q9" value="5" required /><span class="chip-label">5</span></label>
-          </div>
-        </div>
-      </div>
-
-      <!-- القسم الثالث: جودة المحتوى والنقاش -->
-      <div>
-        <div class="section-title">
-          <span class="section-indicator section-3"></span>
-          القسم الثالث: جودة المحتوى والنقاش
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">10) وضوح شرح المعلم لدرجات ابنكم ومستواه الدراسي</label>
-          <div class="options-row">
-            <label class="chip-option"><input type="radio" name="q10" value="1" required /><span class="chip-label">1</span></label>
-            <label class="chip-option"><input type="radio" name="q10" value="2" required /><span class="chip-label">2</span></label>
-            <label class="chip-option"><input type="radio" name="q10" value="3" required /><span class="chip-label">3</span></label>
-            <label class="chip-option"><input type="radio" name="q10" value="4" required /><span class="chip-label">4</span></label>
-            <label class="chip-option"><input type="radio" name="q10" value="5" required /><span class="chip-label">5</span></label>
-          </div>
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">11) وضوح شرح نقاط القوة لدى ابنكم</label>
-          <div class="options-row">
-            <label class="chip-option"><input type="radio" name="q11" value="1" required /><span class="chip-label">1</span></label>
-            <label class="chip-option"><input type="radio" name="q11" value="2" required /><span class="chip-label">2</span></label>
-            <label class="chip-option"><input type="radio" name="q11" value="3" required /><span class="chip-label">3</span></label>
-            <label class="chip-option"><input type="radio" name="q11" value="4" required /><span class="chip-label">4</span></label>
-            <label class="chip-option"><input type="radio" name="q11" value="5" required /><span class="chip-label">5</span></label>
-          </div>
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">12) وضوح شرح نقاط الضعف وخطط المدرسة لمعالجتها</label>
-          <div class="options-row">
-            <label class="chip-option"><input type="radio" name="q12" value="1" required /><span class="chip-label">1</span></label>
-            <label class="chip-option"><input type="radio" name="q12" value="2" required /><span class="chip-label">2</span></label>
-            <label class="chip-option"><input type="radio" name="q12" value="3" required /><span class="chip-label">3</span></label>
-            <label class="chip-option"><input type="radio" name="q12" value="4" required /><span class="chip-label">4</span></label>
-            <label class="chip-option"><input type="radio" name="q12" value="5" required /><span class="chip-label">5</span></label>
-          </div>
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">13) إتاحة الفرصة لكم لطرح الأسئلة والاستفسارات</label>
-          <div class="options-row">
-            <label class="chip-option"><input type="radio" name="q13" value="1" required /><span class="chip-label">1</span></label>
-            <label class="chip-option"><input type="radio" name="q13" value="2" required /><span class="chip-label">2</span></label>
-            <label class="chip-option"><input type="radio" name="q13" value="3" required /><span class="chip-label">3</span></label>
-            <label class="chip-option"><input type="radio" name="q13" value="4" required /><span class="chip-label">4</span></label>
-            <label class="chip-option"><input type="radio" name="q13" value="5" required /><span class="chip-label">5</span></label>
-          </div>
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">14) شعوركم بأن اللقاء قدّم لكم صورة أوضح عن وضع ابنكم الدراسي</label>
-          <div class="options-row">
-            <label class="chip-option"><input type="radio" name="q14" value="1" required /><span class="chip-label">1</span></label>
-            <label class="chip-option"><input type="radio" name="q14" value="2" required /><span class="chip-label">2</span></label>
-            <label class="chip-option"><input type="radio" name="q14" value="3" required /><span class="chip-label">3</span></label>
-            <label class="chip-option"><input type="radio" name="q14" value="4" required /><span class="chip-label">4</span></label>
-            <label class="chip-option"><input type="radio" name="q14" value="5" required /><span class="chip-label">5</span></label>
-          </div>
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">15) شعوركم بأن اللقاء قدّم لكم صورة أوضح عن سلوك ابنكم في المدرسة</label>
-          <div class="options-row">
-            <label class="chip-option"><input type="radio" name="q15" value="1" required /><span class="chip-label">1</span></label>
-            <label class="chip-option"><input type="radio" name="q15" value="2" required /><span class="chip-label">2</span></label>
-            <label class="chip-option"><input type="radio" name="q15" value="3" required /><span class="chip-label">3</span></label>
-            <label class="chip-option"><input type="radio" name="q15" value="4" required /><span class="chip-label">4</span></label>
-            <label class="chip-option"><input type="radio" name="q15" value="5" required /><span class="chip-label">5</span></label>
-          </div>
-        </div>
-      </div>
-
-      <!-- القسم الرابع: التواصل والشراكة مع المدرسة -->
-      <div>
-        <div class="section-title">
-          <span class="section-indicator section-4"></span>
-          القسم الرابع: التواصل والشراكة مع المدرسة
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">16) رضاكم عن قنوات التواصل الحالية بين المدرسة وأولياء الأمور</label>
-          <div class="options-row">
-            <label class="chip-option"><input type="radio" name="q16" value="1" required /><span class="chip-label">1</span></label>
-            <label class="chip-option"><input type="radio" name="q16" value="2" required /><span class="chip-label">2</span></label>
-            <label class="chip-option"><input type="radio" name="q16" value="3" required /><span class="chip-label">3</span></label>
-            <label class="chip-option"><input type="radio" name="q16" value="4" required /><span class="chip-label">4</span></label>
-            <label class="chip-option"><input type="radio" name="q16" value="5" required /><span class="chip-label">5</span></label>
-          </div>
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">17) رضاكم عن منصة "تواصل" ودورها في متابعة أبنائكم</label>
-          <div class="options-row">
-            <label class="chip-option"><input type="radio" name="q17" value="1" required /><span class="chip-label">1</span></label>
-            <label class="chip-option"><input type="radio" name="q17" value="2" required /><span class="chip-label">2</span></label>
-            <label class="chip-option"><input type="radio" name="q17" value="3" required /><span class="chip-label">3</span></label>
-            <label class="chip-option"><input type="radio" name="q17" value="4" required /><span class="chip-label">4</span></label>
-            <label class="chip-option"><input type="radio" name="q17" value="5" required /><span class="chip-label">5</span></label>
-          </div>
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">18) مدى شعوركم بأن المدرسة تستمع لملاحظات واقتراحات أولياء الأمور</label>
-          <div class="options-row">
-            <label class="chip-option"><input type="radio" name="q18" value="1" required /><span class="chip-label">1</span></label>
-            <label class="chip-option"><input type="radio" name="q18" value="2" required /><span class="chip-label">2</span></label>
-            <label class="chip-option"><input type="radio" name="q18" value="3" required /><span class="chip-label">3</span></label>
-            <label class="chip-option"><input type="radio" name="q18" value="4" required /><span class="chip-label">4</span></label>
-            <label class="chip-option"><input type="radio" name="q18" value="5" required /><span class="chip-label">5</span></label>
-          </div>
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">19) مدى شعوركم بأنكم شركاء حقيقيون في القرارات التي تخص أبناءكم</label>
-          <div class="options-row">
-            <label class="chip-option"><input type="radio" name="q19" value="1" required /><span class="chip-label">1</span></label>
-            <label class="chip-option"><input type="radio" name="q19" value="2" required /><span class="chip-label">2</span></label>
-            <label class="chip-option"><input type="radio" name="q19" value="3" required /><span class="chip-label">3</span></label>
-            <label class="chip-option"><input type="radio" name="q19" value="4" required /><span class="chip-label">4</span></label>
-            <label class="chip-option"><input type="radio" name="q19" value="5" required /><span class="chip-label">5</span></label>
-          </div>
-        </div>
-      </div>
-
-      <!-- القسم الخامس: الرضا العام عن اللقاء -->
-      <div>
-        <div class="section-title">
-          <span class="section-indicator section-5"></span>
-          القسم الخامس: الرضا العام عن اللقاء
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">20) تقييمكم العام للقاء التربوي</label>
-          <div class="options-row">
-            <label class="chip-option"><input type="radio" name="q20" value="1" required /><span class="chip-label">1</span></label>
-            <label class="chip-option"><input type="radio" name="q20" value="2" required /><span class="chip-label">2</span></label>
-            <label class="chip-option"><input type="radio" name="q20" value="3" required /><span class="chip-label">3</span></label>
-            <label class="chip-option"><input type="radio" name="q20" value="4" required /><span class="chip-label">4</span></label>
-            <label class="chip-option"><input type="radio" name="q20" value="5" required /><span class="chip-label">5</span></label>
-          </div>
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">21) مدى احتمال حضوركم لقاءات تربوية قادمة</label>
-          <div class="options-row">
-            <label class="chip-option"><input type="radio" name="q21" value="ضعيف جدًا" required /><span class="chip-label">ضعيف جدًا</span></label>
-            <label class="chip-option"><input type="radio" name="q21" value="ضعيف" required /><span class="chip-label">ضعيف</span></label>
-            <label class="chip-option"><input type="radio" name="q21" value="متوسط" required /><span class="chip-label">متوسط</span></label>
-            <label class="chip-option"><input type="radio" name="q21" value="قوي" required /><span class="chip-label">قوي</span></label>
-            <label class="chip-option"><input type="radio" name="q21" value="قوي جدًا" required /><span class="chip-label">قوي جدًا</span></label>
-          </div>
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">22) كم تقيمون تجربتكم في اللقاء من 10؟</label>
-          <input type="number" name="q22" min="1" max="10" class="w-full p-3 rounded-lg input-field focus:outline-none" placeholder="اكتب رقمًا من 1 إلى 10" required />
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">23) هل تنصحون أولياء أمور آخرين بالحضور في اللقاءات القادمة؟</label>
-          <div class="options-row">
-            <label class="chip-option"><input type="radio" name="q23" value="نعم" required /><span class="chip-label">نعم</span></label>
-            <label class="chip-option"><input type="radio" name="q23" value="ربما" required /><span class="chip-label">ربما</span></label>
-            <label class="chip-option"><input type="radio" name="q23" value="لا" required /><span class="chip-label">لا</span></label>
-          </div>
-        </div>
-      </div>
-
-      <!-- القسم السادس: ملاحظاتكم واقتراحاتكم -->
-      <div>
-        <div class="section-title">
-          <span class="section-indicator section-6"></span>
-          القسم السادس: ملاحظاتكم واقتراحاتكم
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">24) ما أكثر ما أعجبكم في هذا اللقاء التربوي؟</label>
-          <textarea name="q24" class="w-full p-3 rounded-lg textarea-field focus:outline-none" placeholder="اكتب ما أعجبك في اللقاء، تنظيمًا أو محتوى أو أسلوبًا..."></textarea>
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">25) ما الجوانب التي ترون أنها تحتاج إلى تحسين في اللقاءات القادمة؟</label>
-          <textarea name="q25" class="w-full p-3 rounded-lg textarea-field focus:outline-none" placeholder="أذكر الجوانب التي يمكن تطويرها من وجهة نظرك..."></textarea>
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">26) ما اقتراحاتكم لزيادة نسبة حضور أولياء الأمور مستقبلًا؟</label>
-          <textarea name="q26" class="w-full p-3 rounded-lg textarea-field focus:outline-none" placeholder="مثل تغيير الوقت، تنظيم فعاليات إضافية، إرسال تذكيرات مبكرة..."></textarea>
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">27) هل ترون أهمية إضافة برامج أو ورش قصيرة لأولياء الأمور أثناء اللقاء؟ وما الموضوعات التي تقترحونها؟</label>
-          <textarea name="q27" class="w-full p-3 rounded-lg textarea-field focus:outline-none" placeholder="مثل: التعامل مع الأبناء في مرحلة المراهقة، إدارة الوقت، متابعة الواجبات..."></textarea>
-        </div>
-
-        <div class="question-card">
-          <label class="question-label">28) أي ملاحظات أو رسائل إضافية تودون توجيهها لإدارة المدرسة أو المعلمين</label>
-          <textarea name="q28" class="w-full p-3 rounded-lg textarea-field focus:outline-none" placeholder="اكتب رسالتك بحرية..."></textarea>
-        </div>
-      </div>
-
-      <!-- رسائل التنبيه -->
-      <div id="messageContainer"></div>
-
-      <!-- أزرار الإرسال والعودة -->
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-        <button type="submit" class="py-3 px-8 rounded-lg button-primary focus:outline-none flex items-center justify-center gap-2">
-          <i class="fas fa-paper-plane"></i>
-          إرسال الاستبيان
-        </button>
-        <button type="button" onclick="goBack()" class="py-3 px-8 rounded-lg button-back focus:outline-none flex items-center justify-center gap-2">
-          <i class="fas fa-arrow-right"></i>
-          العودة للمنصة
-        </button>
-      </div>
-
-      <!-- ملاحظة -->
-      <div class="text-center text-sm text-gray-300 mt-4">
-        بالضغط على زر الإرسال، فأنت توافق على استخدام إجاباتك لأغراض التطوير التربوي وتحسين الخدمات المقدمة لأبنائنا.
-      </div>
-    </form>
-
-    <!-- تذييل المنصة -->
-    <div class="mt-8 p-4 bg-black/20 rounded-lg text-center text-sm">
-      جميع الحقوق محفوظة © لإدارة مدرسة محمد بن سليمان الغافري
-    </div>
-  </div>
-
-  <!-- رسالة النجاح -->
-  <div id="toast" class="toast">
-    <i class="fas fa-check-circle mr-2"></i>
-    تم استلام استجابتك بنجاح، شكرًا لمشاركتك.
-  </div>
-
-  <script>
-    // رابط Google Apps Script الخاص بك
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxwlOkj0z7j5GY68fWHOfCCwEGR2PDNGOutmO5fvup2IL2KKXhPs7ppgybKzn8_kdG4/exec';
-
-    // دالة العودة لمنصة التواصل
-    function goBack() {
-      window.location.href = "index.html";
-    }
-
-    // دالة إظهار الرسائل
-    function showMessage(message, type) {
-      const container = document.getElementById('messageContainer');
-      const messageDiv = document.createElement('div');
-      messageDiv.className = type === 'success' ? 'success-message' : 'error-message';
-      messageDiv.innerHTML = `
-        <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'} mr-2"></i>
-        ${message}
-      `;
-      container.innerHTML = '';
-      container.appendChild(messageDiv);
-      
-      setTimeout(() => {
-        messageDiv.remove();
-      }, 5000);
-    }
-
-    // دالة إظهار toast
-    function showToast() {
-      const toast = document.getElementById('toast');
-      toast.classList.add('show');
-      setTimeout(() => {
-        toast.classList.remove('show');
-      }, 3500);
-    }
-
-    // دالة جمع البيانات من النموذج
-    function collectFormData(form) {
-      const formData = new FormData(form);
-      const data = {};
-      
-      for (let [key, value] of formData.entries()) {
-        data[key] = value;
-      }
-      
-      // إضافة الطابع الزمني
-      data.timestamp = new Date().toLocaleString('ar-EG');
-      
-      return data;
-    }
-
-    // معالجة إرسال النموذج
-    document.getElementById('surveyForm').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      
-      // التحقق من البيانات المطلوبة
-      const requiredFields = this.querySelectorAll('[required]');
-      let isValid = true;
-      
-      requiredFields.forEach(field => {
-        if (!field.value) {
-          isValid = false;
-          field.closest('.question-card').style.borderColor = '#ff6b6b';
-        } else {
-          field.closest('.question-card').style.borderColor = 'rgba(255, 255, 255, 0.2)';
-        }
-      });
-
-      if (!isValid) {
-        showMessage('يرجى ملء جميع الحقول المطلوبة', 'error');
-        return;
-      }
-
-      // إظهار تحميل
-      const submitBtn = this.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
-      submitBtn.disabled = true;
-
-      try {
-        // جمع البيانات
-        const formData = collectFormData(this);
-        
-        // إرسال البيانات إلى Google Apps Script
-        const response = await fetch(SCRIPT_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          body: JSON.stringify(formData),
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
-
-        // نظرًا لأننا نستخدم no-cors، لا يمكننا قراءة الاستجابة
-        // ولكن نعتبر أن الإرسال ناجح إذا لم يكن هناك خطأ
-        showToast();
-        this.reset();
-        
-      } catch (error) {
-        showMessage('حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.', 'error');
-        console.error('Error:', error);
-      } finally {
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-      }
-    });
-
-    // إضافة تأثيرات تفاعلية
-    document.addEventListener('DOMContentLoaded', function() {
-      const inputs = document.querySelectorAll('input, select, textarea');
-      inputs.forEach(input => {
-        input.addEventListener('focus', function() {
-          this.closest('.question-card').style.borderColor = '#ffd700';
-        });
-        input.addEventListener('blur', function() {
-          this.closest('.question-card').style.borderColor = 'rgba(255, 255, 255, 0.2)';
-        });
-      });
-    });
-  </script>
+ subjects.forEach(sub=>{
+   const card=document.createElement("div"); card.className="card subject";
+   if(!sub.success){
+     card.innerHTML=`<div class="subjectTitle"><h3>${escapeHtml(sub.subject||"مادة")}</h3><span class="pill">غير متاح</span></div>
+       <div class="empty">${escapeHtml(sub.error||"لا توجد بيانات متاحة حاليًا")}</div>`;
+     box.appendChild(card); return;
+   }
+   successCount++;
+   const assessments=sub.assessments||[];
+   gradeCount+=assessments.filter(a=>String(a.value??"").trim()!=="").length;
+   if(String(sub.note||"").trim())noteCount++;
+   const grades=assessments.map(a=>{
+     const val=String(a.value??"").trim();
+     return `<div class="grade"><div class="gradeName">${escapeHtml(a.name)}</div><div class="gradeValue ${val?"":"emptyValue"}">${escapeHtml(val||"—")}</div></div>`;
+   }).join("");
+   card.innerHTML=`<div class="subjectTitle"><h3>${escapeHtml(sub.subject)}</h3><span class="pill">سجل المادة</span></div>
+     <div class="grades">${grades||'<div class="empty">لا توجد أدوات تقويم معروضة.</div>'}</div>
+     <div class="note ${sub.note?"":"noNote"}"><strong>ملاحظة المعلم:</strong> ${escapeHtml(sub.note||"لا توجد ملاحظة مرصودة حاليًا.")}</div>`;
+   box.appendChild(card);
+ });
+ if(!subjects.length)box.innerHTML='<div class="card empty">لم يتم العثور على مواد مرتبطة بهذا الصف والشعبة.</div>';
+ $("subjectCount").textContent=successCount;
+ $("gradeCount").textContent=gradeCount;
+ $("noteCount").textContent=noteCount;
+}
+function logout(){
+ $("reportView").classList.add("hidden");
+ $("loginView").classList.remove("hidden");
+ $("civilId").value="";
+ $("subjects").innerHTML="";
+ status("");
+}
+$("civilId").addEventListener("keydown",e=>{if(e.key==="Enter")loadReport()});
+</script>
 </body>
 </html>
