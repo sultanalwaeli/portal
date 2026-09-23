@@ -3159,6 +3159,34 @@ function renderBehaviorCard(
 
 
 // ===========================================
+// التعرف المرن على سجل السلوك
+// ===========================================
+
+function normalizePortalText(value){
+
+  return String(value || "")
+    .normalize("NFKC")
+    .replace(/[\u064B-\u065F\u0670]/g, "")
+    .replace(/[أإآ]/g, "ا")
+    .replace(/ـ/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function isBehaviorRecord(sub){
+
+  const name = normalizePortalText(sub && sub.subject);
+
+  return (
+    (sub && sub.recordType === "behavior") ||
+    name === normalizePortalText("سجل السلوك") ||
+    name === normalizePortalText("سجل سلوك") ||
+    name === normalizePortalText("السلوك")
+  );
+}
+
+
+// ===========================================
 // عرض التقرير
 // ===========================================
 
@@ -3222,10 +3250,7 @@ function renderReport(
       // سجل السلوك
       // ======================================
 
-      if(
-        sub.recordType ===
-        "behavior"
-      ){
+      if(isBehaviorRecord(sub)){
 
         const behaviorCard =
           renderBehaviorCard(
