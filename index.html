@@ -1,194 +1,3622 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0b3150">
-<title>بوابة ولي الأمر | مدرسة أبو الدرداء</title>
+
+<meta
+  name="viewport"
+  content="width=device-width,initial-scale=1"
+>
+
+<meta
+  name="theme-color"
+  content="#0b3150"
+>
+
+<title>
+بوابة ولي الأمر | مدرسة أبو الدرداء
+</title>
+
+
 <style>
+
 :root{
- --navy:#0b3150;--navy2:#155b78;--teal:#16827d;--gold:#c8a35b;
- --ink:#183047;--muted:#718096;--bg:#f4f8fa;--line:#e3ebef;--white:#fff;
+
+  --navy:#0b3150;
+  --navy2:#155b78;
+  --teal:#16827d;
+  --gold:#c8a35b;
+
+  --ink:#183047;
+  --muted:#718096;
+
+  --bg:#f4f8fa;
+  --line:#e3ebef;
+  --white:#fff;
+
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;min-height:100vh;font-family:Tahoma,Arial,sans-serif;color:var(--ink);
- background:
- radial-gradient(circle at 8% 10%,rgba(22,130,125,.10),transparent 25%),
- radial-gradient(circle at 90% 20%,rgba(200,163,91,.12),transparent 24%),
- linear-gradient(180deg,#edf5f7 0,#f9fbfc 45%,#f3f7f9 100%)}
-button,input{font:inherit}.hidden{display:none!important}
-.shell{width:min(1120px,calc(100% - 24px));margin:auto;padding:18px 0 42px}
-.brand{position:relative;overflow:hidden;display:flex;align-items:center;gap:15px;background:rgba(255,255,255,.92);
- border:1px solid rgba(255,255,255,.7);backdrop-filter:blur(14px);border-radius:25px;padding:13px 17px;
- box-shadow:0 16px 50px rgba(11,49,80,.09);margin-bottom:17px}
-.brand:after{content:"";position:absolute;left:-30px;top:-45px;width:150px;height:150px;border-radius:50%;background:rgba(200,163,91,.10)}
-.logo{width:74px;height:74px;object-fit:contain;border:1px solid var(--line);border-radius:19px;padding:5px;background:#fff;z-index:1}
-.brandtext{flex:1;z-index:1}.small{font-size:11px;color:#667b8d;line-height:1.75}.school{font-size:19px;font-weight:900;color:var(--navy)}
-.portalBadge{z-index:1;border:1px solid #dfe9ed;background:#f7fafb;color:var(--navy);border-radius:999px;padding:8px 12px;font-size:11px;font-weight:900}
-.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#092d49 0%,#10526f 56%,#14766f 100%);
- border-radius:31px;padding:42px;box-shadow:0 25px 70px rgba(11,49,80,.22);display:grid;grid-template-columns:1.08fr .92fr;gap:34px;align-items:center}
-.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.09)}
-.hero:before{width:430px;height:430px;right:-210px;top:-190px}.hero:after{width:310px;height:310px;left:-170px;bottom:-190px}
-.heroCopy,.login{position:relative;z-index:1}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:#efdcae;font-size:11px;font-weight:900;letter-spacing:.8px}
-.spark{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(200,163,91,.13)}
-.hero h1{color:#fff;font-size:39px;margin:10px 0 8px;line-height:1.25}.heroLead{color:#dceaf0;line-height:1.9;margin:0;max-width:610px}
-.vision{margin-top:25px;padding:16px 17px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.08);
- border-radius:18px;color:#fff;backdrop-filter:blur(8px)}
-.visionLabel{font-size:10px;color:#efdcae;font-weight:900;margin-bottom:6px}.visionText{font-size:16px;font-weight:900;line-height:1.8}
-.features{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}.feature{display:flex;align-items:center;gap:7px;color:#d9e8ed;background:rgba(255,255,255,.07);border-radius:999px;padding:7px 10px;font-size:11px}
-.icon{width:19px;height:19px;display:inline-flex;align-items:center;justify-content:center}
-.icon svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.login{background:rgba(255,255,255,.97);border-radius:24px;padding:27px;box-shadow:0 18px 45px rgba(0,0,0,.12)}
-.loginTop{display:flex;gap:12px;align-items:center;margin-bottom:17px}.loginIcon{width:45px;height:45px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#e8f4f2,#f8f1e4);color:var(--teal)}
-.loginIcon .icon{width:25px;height:25px}.login h2{color:var(--navy);margin:0 0 4px;font-size:21px}.login p{color:var(--muted);font-size:12px;margin:0;line-height:1.7}
-label{display:block;font-size:12px;font-weight:900;margin:0 0 7px;color:#314b60}.inputWrap{position:relative}.inputIcon{position:absolute;right:13px;top:50%;transform:translateY(-50%);color:#8194a4;width:20px}
-.input{width:100%;padding:14px 43px 14px 13px;border:1px solid #dbe5ea;border-radius:14px;background:#fbfdfe;outline:none;transition:.2s}
-.input:focus{border-color:#78aaa9;box-shadow:0 0 0 4px rgba(22,130,125,.08);background:#fff}
-.primary{border:0;border-radius:14px;background:linear-gradient(110deg,var(--navy),var(--teal));color:#fff;padding:14px 17px;font-weight:900;cursor:pointer;box-shadow:0 10px 24px rgba(11,49,80,.17);transition:.2s}
-.primary:hover{transform:translateY(-1px);box-shadow:0 13px 28px rgba(11,49,80,.23)}.primary:disabled{opacity:.65;cursor:wait}.full{width:100%;margin-top:13px}
-.security{display:flex;align-items:flex-start;gap:7px;color:#8a98a5;font-size:10px;line-height:1.6;margin-top:12px}.security .icon{min-width:16px;width:16px}
-.status{padding:12px 15px;border-radius:13px;margin-bottom:15px;font-size:12px;box-shadow:0 8px 20px rgba(11,49,80,.05)}.err{background:#fff0ef;color:#b42318;border:1px solid #ffd9d5}.ok{background:#eaf8f2;color:#147a5b;border:1px solid #d3eee3}
-.card{background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:23px;padding:21px;box-shadow:0 14px 45px rgba(11,49,80,.075);margin-bottom:15px}
-.studentCard{position:relative;overflow:hidden}.studentCard:before{content:"";position:absolute;right:0;top:0;width:6px;height:100%;background:linear-gradient(var(--gold),var(--teal))}
-.studentHead{display:flex;justify-content:space-between;gap:15px;align-items:center}.identity{display:flex;gap:13px;align-items:center}.avatar{width:53px;height:53px;border-radius:17px;background:linear-gradient(145deg,#eaf5f3,#f9f1e3);display:flex;align-items:center;justify-content:center;color:var(--navy)}
-.avatar .icon{width:29px;height:29px}.studentName{font-size:23px;font-weight:900;color:var(--navy)}.meta{color:var(--muted);font-size:12px;margin-top:6px}
-.logout{border:1px solid #dce6eb;background:#fff;color:var(--navy);padding:10px 13px;border-radius:12px;font-weight:800;cursor:pointer}
-.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}.stat{display:flex;align-items:center;gap:11px;background:#f7fafb;border:1px solid #edf2f4;border-radius:16px;padding:13px}
-.statIcon{width:37px;height:37px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:#eaf4f3;color:var(--teal)}.statIcon .icon{width:20px}
-.stat strong{display:block;color:var(--navy);font-size:19px}.stat span{font-size:10px;color:var(--muted)}
-.sectionTitle{display:flex;align-items:center;gap:9px;margin:21px 4px 13px;color:var(--navy);font-size:17px;font-weight:900}.sectionTitle .icon{color:var(--gold)}
-.subject{overflow:hidden;position:relative}.subject:before{content:"";position:absolute;right:0;top:0;width:4px;height:100%;background:var(--subjectAccent,var(--teal))}
-.subjectTitle{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:15px}.subjectName{display:flex;align-items:center;gap:10px}.subjectIcon{width:40px;height:40px;border-radius:13px;display:flex;align-items:center;justify-content:center;background:#eef6f5;color:var(--subjectAccent,var(--teal))}
-.subjectIcon .icon{width:21px}.subjectTitle h3{margin:0;color:var(--navy);font-size:19px}.pill{font-size:10px;background:#f2f6f8;color:#536b7d;border-radius:999px;padding:6px 10px}
-.grades{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.grade{border:1px solid #e7edf1;border-radius:15px;padding:12px;background:linear-gradient(180deg,#fff,#fafcfd);transition:.2s}.grade:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(11,49,80,.07)}
-.gradeName{font-size:11px;color:#667b8d;min-height:31px;line-height:1.5}.gradeValue{font-size:20px;font-weight:900;color:var(--navy);margin-top:4px}.emptyValue{color:#b3bdc5}
-.note{display:flex;gap:9px;align-items:flex-start;margin-top:13px;background:#fff8e9;border:1px solid #f1dfb7;border-radius:14px;padding:13px;color:#78591f;font-size:12px;line-height:1.8}.note .icon{min-width:18px;color:#b88b35}.noNote{background:#f7f9fa;border-color:#edf0f2;color:#98a2ad}.noNote .icon{color:#98a2ad}
-.notice{font-size:11px;color:#708493;line-height:1.8;text-align:center;margin:20px auto;max-width:800px}.empty{text-align:center;padding:28px;color:#98a2ad}
-.footerVision{text-align:center;margin-top:24px;color:#5f7688;font-size:11px}.footerVision strong{color:var(--navy)}
-.loader{display:inline-block;width:13px;height:13px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:-2px;margin-left:7px}@keyframes spin{to{transform:rotate(360deg)}}
-@media(max-width:800px){.hero{grid-template-columns:1fr;padding:26px}.hero h1{font-size:30px}.grades{grid-template-columns:repeat(2,1fr)}.portalBadge{display:none}}
-@media(max-width:520px){.shell{width:min(100% - 14px,1120px);padding-top:8px}.brand{border-radius:19px}.logo{width:59px;height:59px}.school{font-size:14px}.small{font-size:9px}.hero{padding:20px;border-radius:24px}.hero h1{font-size:27px}.visionText{font-size:14px}.login{padding:20px}.studentHead{align-items:flex-start;flex-direction:column}.summary{grid-template-columns:1fr}.grades{grid-template-columns:repeat(2,1fr)}.studentName{font-size:19px}}
+
+
+*{
+  box-sizing:border-box;
+}
+
+
+html{
+  scroll-behavior:smooth;
+}
+
+
+body{
+
+  margin:0;
+
+  min-height:100vh;
+
+  font-family:
+    Tahoma,
+    Arial,
+    sans-serif;
+
+  color:
+    var(--ink);
+
+  background:
+
+    radial-gradient(
+      circle at 8% 10%,
+      rgba(22,130,125,.10),
+      transparent 25%
+    ),
+
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(200,163,91,.12),
+      transparent 24%
+    ),
+
+    linear-gradient(
+      180deg,
+      #edf5f7 0,
+      #f9fbfc 45%,
+      #f3f7f9 100%
+    );
+
+}
+
+
+button,
+input{
+  font:inherit;
+}
+
+
+.hidden{
+  display:none !important;
+}
+
+
+.shell{
+
+  width:
+    min(
+      1120px,
+      calc(100% - 24px)
+    );
+
+  margin:auto;
+
+  padding:
+    18px 0 42px;
+
+}
+
+
+/* =====================================
+   الهوية
+===================================== */
+
+.brand{
+
+  position:relative;
+
+  overflow:hidden;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:15px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      .92
+    );
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      .7
+    );
+
+  backdrop-filter:
+    blur(14px);
+
+  border-radius:
+    25px;
+
+  padding:
+    13px 17px;
+
+  box-shadow:
+    0 16px 50px
+    rgba(
+      11,
+      49,
+      80,
+      .09
+    );
+
+  margin-bottom:
+    17px;
+
+}
+
+
+.brand:after{
+
+  content:"";
+
+  position:absolute;
+
+  left:-30px;
+
+  top:-45px;
+
+  width:150px;
+
+  height:150px;
+
+  border-radius:50%;
+
+  background:
+    rgba(
+      200,
+      163,
+      91,
+      .10
+    );
+
+}
+
+
+.logo{
+
+  width:74px;
+
+  height:74px;
+
+  object-fit:contain;
+
+  border:
+    1px solid
+    var(--line);
+
+  border-radius:
+    19px;
+
+  padding:5px;
+
+  background:#fff;
+
+  z-index:1;
+
+}
+
+
+.brandtext{
+
+  flex:1;
+
+  z-index:1;
+
+}
+
+
+.small{
+
+  font-size:11px;
+
+  color:#667b8d;
+
+  line-height:1.75;
+
+}
+
+
+.school{
+
+  font-size:19px;
+
+  font-weight:900;
+
+  color:
+    var(--navy);
+
+}
+
+
+.portalBadge{
+
+  z-index:1;
+
+  border:
+    1px solid
+    #dfe9ed;
+
+  background:#f7fafb;
+
+  color:
+    var(--navy);
+
+  border-radius:
+    999px;
+
+  padding:
+    8px 12px;
+
+  font-size:11px;
+
+  font-weight:900;
+
+}
+
+
+/* =====================================
+   الصفحة الرئيسية
+===================================== */
+
+.hero{
+
+  position:relative;
+
+  overflow:hidden;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #092d49 0%,
+      #10526f 56%,
+      #14766f 100%
+    );
+
+  border-radius:
+    31px;
+
+  padding:
+    42px;
+
+  box-shadow:
+    0 25px 70px
+    rgba(
+      11,
+      49,
+      80,
+      .22
+    );
+
+  display:grid;
+
+  grid-template-columns:
+    1.08fr .92fr;
+
+  gap:34px;
+
+  align-items:center;
+
+}
+
+
+.hero:before,
+.hero:after{
+
+  content:"";
+
+  position:absolute;
+
+  border-radius:50%;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      .09
+    );
+
+}
+
+
+.hero:before{
+
+  width:430px;
+
+  height:430px;
+
+  right:-210px;
+
+  top:-190px;
+
+}
+
+
+.hero:after{
+
+  width:310px;
+
+  height:310px;
+
+  left:-170px;
+
+  bottom:-190px;
+
+}
+
+
+.heroCopy,
+.login{
+
+  position:relative;
+
+  z-index:1;
+
+}
+
+
+.eyebrow{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  color:#efdcae;
+
+  font-size:11px;
+
+  font-weight:900;
+
+  letter-spacing:.8px;
+
+}
+
+
+.spark{
+
+  width:8px;
+
+  height:8px;
+
+  border-radius:50%;
+
+  background:
+    var(--gold);
+
+  box-shadow:
+    0 0 0 5px
+    rgba(
+      200,
+      163,
+      91,
+      .13
+    );
+
+}
+
+
+.hero h1{
+
+  color:#fff;
+
+  font-size:39px;
+
+  margin:
+    10px 0 8px;
+
+  line-height:1.25;
+
+}
+
+
+.heroLead{
+
+  color:#dceaf0;
+
+  line-height:1.9;
+
+  margin:0;
+
+  max-width:610px;
+
+}
+
+
+.vision{
+
+  margin-top:25px;
+
+  padding:
+    16px 17px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      .13
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      .08
+    );
+
+  border-radius:18px;
+
+  color:#fff;
+
+  backdrop-filter:
+    blur(8px);
+
+}
+
+
+.visionLabel{
+
+  font-size:10px;
+
+  color:#efdcae;
+
+  font-weight:900;
+
+  margin-bottom:6px;
+
+}
+
+
+.visionText{
+
+  font-size:16px;
+
+  font-weight:900;
+
+  line-height:1.8;
+
+}
+
+
+.features{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:8px;
+
+  margin-top:17px;
+
+}
+
+
+.feature{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:7px;
+
+  color:#d9e8ed;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      .07
+    );
+
+  border-radius:
+    999px;
+
+  padding:
+    7px 10px;
+
+  font-size:11px;
+
+}
+
+
+/* =====================================
+   الأيقونات
+===================================== */
+
+.icon{
+
+  width:19px;
+
+  height:19px;
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+}
+
+
+.icon svg{
+
+  width:100%;
+
+  height:100%;
+
+  stroke:
+    currentColor;
+
+  fill:none;
+
+  stroke-width:1.8;
+
+  stroke-linecap:round;
+
+  stroke-linejoin:round;
+
+}
+
+
+/* =====================================
+   الدخول
+===================================== */
+
+.login{
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      .97
+    );
+
+  border-radius:
+    24px;
+
+  padding:
+    27px;
+
+  box-shadow:
+    0 18px 45px
+    rgba(
+      0,
+      0,
+      0,
+      .12
+    );
+
+}
+
+
+.loginTop{
+
+  display:flex;
+
+  gap:12px;
+
+  align-items:center;
+
+  margin-bottom:17px;
+
+}
+
+
+.loginIcon{
+
+  width:45px;
+
+  height:45px;
+
+  border-radius:14px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  background:
+
+    linear-gradient(
+      145deg,
+      #e8f4f2,
+      #f8f1e4
+    );
+
+  color:
+    var(--teal);
+
+}
+
+
+.loginIcon .icon{
+
+  width:25px;
+
+  height:25px;
+
+}
+
+
+.login h2{
+
+  color:
+    var(--navy);
+
+  margin:
+    0 0 4px;
+
+  font-size:21px;
+
+}
+
+
+.login p{
+
+  color:
+    var(--muted);
+
+  font-size:12px;
+
+  margin:0;
+
+  line-height:1.7;
+
+}
+
+
+label{
+
+  display:block;
+
+  font-size:12px;
+
+  font-weight:900;
+
+  margin:
+    0 0 7px;
+
+  color:#314b60;
+
+}
+
+
+.inputWrap{
+
+  position:relative;
+
+}
+
+
+.inputIcon{
+
+  position:absolute;
+
+  right:13px;
+
+  top:50%;
+
+  transform:
+    translateY(-50%);
+
+  color:#8194a4;
+
+  width:20px;
+
+}
+
+
+.input{
+
+  width:100%;
+
+  padding:
+    14px 43px
+    14px 13px;
+
+  border:
+    1px solid
+    #dbe5ea;
+
+  border-radius:
+    14px;
+
+  background:
+    #fbfdfe;
+
+  outline:none;
+
+  transition:.2s;
+
+}
+
+
+.input:focus{
+
+  border-color:
+    #78aaa9;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(
+      22,
+      130,
+      125,
+      .08
+    );
+
+  background:#fff;
+
+}
+
+
+.primary{
+
+  border:0;
+
+  border-radius:14px;
+
+  background:
+
+    linear-gradient(
+      110deg,
+      var(--navy),
+      var(--teal)
+    );
+
+  color:#fff;
+
+  padding:
+    14px 17px;
+
+  font-weight:900;
+
+  cursor:pointer;
+
+  box-shadow:
+    0 10px 24px
+    rgba(
+      11,
+      49,
+      80,
+      .17
+    );
+
+  transition:.2s;
+
+}
+
+
+.primary:hover{
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 13px 28px
+    rgba(
+      11,
+      49,
+      80,
+      .23
+    );
+
+}
+
+
+.primary:disabled{
+
+  opacity:.65;
+
+  cursor:wait;
+
+}
+
+
+.full{
+
+  width:100%;
+
+  margin-top:13px;
+
+}
+
+
+.security{
+
+  display:flex;
+
+  align-items:flex-start;
+
+  gap:7px;
+
+  color:#8a98a5;
+
+  font-size:10px;
+
+  line-height:1.6;
+
+  margin-top:12px;
+
+}
+
+
+.security .icon{
+
+  min-width:16px;
+
+  width:16px;
+
+}
+
+
+/* =====================================
+   الحالة
+===================================== */
+
+.status{
+
+  padding:
+    12px 15px;
+
+  border-radius:13px;
+
+  margin-bottom:15px;
+
+  font-size:12px;
+
+  box-shadow:
+    0 8px 20px
+    rgba(
+      11,
+      49,
+      80,
+      .05
+    );
+
+}
+
+
+.err{
+
+  background:#fff0ef;
+
+  color:#b42318;
+
+  border:
+    1px solid
+    #ffd9d5;
+
+}
+
+
+.ok{
+
+  background:#eaf8f2;
+
+  color:#147a5b;
+
+  border:
+    1px solid
+    #d3eee3;
+
+}
+
+
+/* =====================================
+   البطاقات
+===================================== */
+
+.card{
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      .96
+    );
+
+  border:
+    1px solid
+    var(--line);
+
+  border-radius:
+    23px;
+
+  padding:21px;
+
+  box-shadow:
+    0 14px 45px
+    rgba(
+      11,
+      49,
+      80,
+      .075
+    );
+
+  margin-bottom:15px;
+
+}
+
+
+.studentCard{
+
+  position:relative;
+
+  overflow:hidden;
+
+}
+
+
+.studentCard:before{
+
+  content:"";
+
+  position:absolute;
+
+  right:0;
+
+  top:0;
+
+  width:6px;
+
+  height:100%;
+
+  background:
+
+    linear-gradient(
+      var(--gold),
+      var(--teal)
+    );
+
+}
+
+
+.studentHead{
+
+  display:flex;
+
+  justify-content:
+    space-between;
+
+  gap:15px;
+
+  align-items:center;
+
+}
+
+
+.identity{
+
+  display:flex;
+
+  gap:13px;
+
+  align-items:center;
+
+}
+
+
+.avatar{
+
+  width:53px;
+
+  height:53px;
+
+  border-radius:17px;
+
+  background:
+
+    linear-gradient(
+      145deg,
+      #eaf5f3,
+      #f9f1e3
+    );
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  color:
+    var(--navy);
+
+}
+
+
+.avatar .icon{
+
+  width:29px;
+
+  height:29px;
+
+}
+
+
+.studentName{
+
+  font-size:23px;
+
+  font-weight:900;
+
+  color:
+    var(--navy);
+
+}
+
+
+.meta{
+
+  color:
+    var(--muted);
+
+  font-size:12px;
+
+  margin-top:6px;
+
+}
+
+
+.logout{
+
+  border:
+    1px solid
+    #dce6eb;
+
+  background:#fff;
+
+  color:
+    var(--navy);
+
+  padding:
+    10px 13px;
+
+  border-radius:
+    12px;
+
+  font-weight:800;
+
+  cursor:pointer;
+
+}
+
+
+/* =====================================
+   الملخص
+===================================== */
+
+.summary{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
+  gap:10px;
+
+  margin-top:18px;
+
+}
+
+
+.stat{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:11px;
+
+  background:#f7fafb;
+
+  border:
+    1px solid
+    #edf2f4;
+
+  border-radius:
+    16px;
+
+  padding:13px;
+
+}
+
+
+.statIcon{
+
+  width:37px;
+
+  height:37px;
+
+  border-radius:12px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  background:#eaf4f3;
+
+  color:
+    var(--teal);
+
+}
+
+
+.statIcon .icon{
+
+  width:20px;
+
+}
+
+
+.stat strong{
+
+  display:block;
+
+  color:
+    var(--navy);
+
+  font-size:19px;
+
+}
+
+
+.stat span{
+
+  font-size:10px;
+
+  color:
+    var(--muted);
+
+}
+
+
+/* =====================================
+   المواد
+===================================== */
+
+.sectionTitle{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:9px;
+
+  margin:
+    21px 4px 13px;
+
+  color:
+    var(--navy);
+
+  font-size:17px;
+
+  font-weight:900;
+
+}
+
+
+.sectionTitle .icon{
+
+  color:
+    var(--gold);
+
+}
+
+
+.subject{
+
+  overflow:hidden;
+
+  position:relative;
+
+}
+
+
+.subject:before{
+
+  content:"";
+
+  position:absolute;
+
+  right:0;
+
+  top:0;
+
+  width:4px;
+
+  height:100%;
+
+  background:
+    var(
+      --subjectAccent,
+      var(--teal)
+    );
+
+}
+
+
+.subjectTitle{
+
+  display:flex;
+
+  justify-content:
+    space-between;
+
+  align-items:center;
+
+  gap:10px;
+
+  margin-bottom:15px;
+
+}
+
+
+.subjectName{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+}
+
+
+.subjectIcon{
+
+  width:40px;
+
+  height:40px;
+
+  border-radius:13px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  background:#eef6f5;
+
+  color:
+    var(
+      --subjectAccent,
+      var(--teal)
+    );
+
+}
+
+
+.subjectIcon .icon{
+
+  width:21px;
+
+}
+
+
+.subjectTitle h3{
+
+  margin:0;
+
+  color:
+    var(--navy);
+
+  font-size:19px;
+
+}
+
+
+.pill{
+
+  font-size:10px;
+
+  background:#f2f6f8;
+
+  color:#536b7d;
+
+  border-radius:999px;
+
+  padding:
+    6px 10px;
+
+}
+
+
+.grades{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      1fr
+    );
+
+  gap:9px;
+
+}
+
+
+.grade{
+
+  border:
+    1px solid
+    #e7edf1;
+
+  border-radius:
+    15px;
+
+  padding:12px;
+
+  background:
+
+    linear-gradient(
+      180deg,
+      #fff,
+      #fafcfd
+    );
+
+  transition:.2s;
+
+}
+
+
+.grade:hover{
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 8px 18px
+    rgba(
+      11,
+      49,
+      80,
+      .07
+    );
+
+}
+
+
+.gradeName{
+
+  font-size:11px;
+
+  color:#667b8d;
+
+  min-height:31px;
+
+  line-height:1.5;
+
+}
+
+
+.gradeValue{
+
+  font-size:20px;
+
+  font-weight:900;
+
+  color:
+    var(--navy);
+
+  margin-top:4px;
+
+}
+
+
+.emptyValue{
+
+  color:#b3bdc5;
+
+}
+
+
+/* =====================================
+   الملاحظات
+===================================== */
+
+.note{
+
+  display:flex;
+
+  gap:9px;
+
+  align-items:flex-start;
+
+  margin-top:13px;
+
+  background:#fff8e9;
+
+  border:
+    1px solid
+    #f1dfb7;
+
+  border-radius:14px;
+
+  padding:13px;
+
+  color:#78591f;
+
+  font-size:12px;
+
+  line-height:1.8;
+
+}
+
+
+.note .icon{
+
+  min-width:18px;
+
+  color:#b88b35;
+
+}
+
+
+.noNote{
+
+  background:#f7f9fa;
+
+  border-color:#edf0f2;
+
+  color:#98a2ad;
+
+}
+
+
+.noNote .icon{
+
+  color:#98a2ad;
+
+}
+
+
+/* =====================================
+   سجل السلوك
+===================================== */
+
+.behaviorCard{
+
+  --subjectAccent:#16827d;
+
+}
+
+
+.behaviorList{
+
+  display:grid;
+
+  gap:12px;
+
+}
+
+
+.behaviorItem{
+
+  position:relative;
+
+  overflow:hidden;
+
+  border:
+    1px solid
+    #dfeae9;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #fbfefe,
+      #f5faf9
+    );
+
+  border-radius:18px;
+
+  padding:17px;
+
+}
+
+
+.behaviorItem:before{
+
+  content:"";
+
+  position:absolute;
+
+  right:0;
+
+  top:0;
+
+  bottom:0;
+
+  width:4px;
+
+  background:
+    var(--teal);
+
+}
+
+
+.behaviorTop{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:
+    space-between;
+
+  gap:10px;
+
+  margin-bottom:13px;
+
+}
+
+
+.behaviorNumber{
+
+  font-size:13px;
+
+  font-weight:900;
+
+  color:
+    var(--navy);
+
+}
+
+
+.behaviorDate{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  background:#edf6f5;
+
+  color:#39736f;
+
+  border-radius:999px;
+
+  padding:
+    6px 10px;
+
+  font-size:10px;
+
+  font-weight:800;
+
+}
+
+
+.behaviorText{
+
+  color:
+    var(--navy);
+
+  font-size:15px;
+
+  font-weight:900;
+
+  line-height:1.8;
+
+  margin-bottom:14px;
+
+}
+
+
+.behaviorDetails{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:9px;
+
+}
+
+
+.behaviorDetail{
+
+  background:#fff;
+
+  border:
+    1px solid
+    #e8eef0;
+
+  border-radius:13px;
+
+  padding:11px;
+
+}
+
+
+.behaviorDetailLabel{
+
+  display:block;
+
+  color:#81919d;
+
+  font-size:10px;
+
+  margin-bottom:5px;
+
+}
+
+
+.behaviorDetailValue{
+
+  color:#344e61;
+
+  font-size:12px;
+
+  font-weight:800;
+
+  line-height:1.7;
+
+}
+
+
+.behaviorClear{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  padding:17px;
+
+  border:
+    1px solid
+    #dceee8;
+
+  background:#f1faf7;
+
+  color:#31755f;
+
+  border-radius:16px;
+
+  font-size:13px;
+
+  font-weight:800;
+
+}
+
+
+.behaviorClearIcon{
+
+  width:37px;
+
+  height:37px;
+
+  min-width:37px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:#dff3eb;
+
+  font-size:19px;
+
+}
+
+
+/* =====================================
+   عام
+===================================== */
+
+.notice{
+
+  font-size:11px;
+
+  color:#708493;
+
+  line-height:1.8;
+
+  text-align:center;
+
+  margin:
+    20px auto;
+
+  max-width:800px;
+
+}
+
+
+.empty{
+
+  text-align:center;
+
+  padding:28px;
+
+  color:#98a2ad;
+
+}
+
+
+.footerVision{
+
+  text-align:center;
+
+  margin-top:24px;
+
+  color:#5f7688;
+
+  font-size:11px;
+
+}
+
+
+.footerVision strong{
+
+  color:
+    var(--navy);
+
+}
+
+
+.loader{
+
+  display:inline-block;
+
+  width:13px;
+
+  height:13px;
+
+  border:
+    2px solid
+    rgba(
+      255,
+      255,
+      255,
+      .4
+    );
+
+  border-top-color:#fff;
+
+  border-radius:50%;
+
+  animation:
+    spin .7s
+    linear infinite;
+
+  vertical-align:-2px;
+
+  margin-left:7px;
+
+}
+
+
+@keyframes spin{
+
+  to{
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+
+/* =====================================
+   الجوال
+===================================== */
+
+@media(
+  max-width:800px
+){
+
+  .hero{
+
+    grid-template-columns:
+      1fr;
+
+    padding:26px;
+
+  }
+
+
+  .hero h1{
+
+    font-size:30px;
+
+  }
+
+
+  .grades{
+
+    grid-template-columns:
+      repeat(
+        2,
+        1fr
+      );
+
+  }
+
+
+  .portalBadge{
+
+    display:none;
+
+  }
+
+}
+
+
+@media(
+  max-width:520px
+){
+
+  .shell{
+
+    width:
+      min(
+        100% - 14px,
+        1120px
+      );
+
+    padding-top:8px;
+
+  }
+
+
+  .brand{
+
+    border-radius:19px;
+
+  }
+
+
+  .logo{
+
+    width:59px;
+
+    height:59px;
+
+  }
+
+
+  .school{
+
+    font-size:14px;
+
+  }
+
+
+  .small{
+
+    font-size:9px;
+
+  }
+
+
+  .hero{
+
+    padding:20px;
+
+    border-radius:24px;
+
+  }
+
+
+  .hero h1{
+
+    font-size:27px;
+
+  }
+
+
+  .visionText{
+
+    font-size:14px;
+
+  }
+
+
+  .login{
+
+    padding:20px;
+
+  }
+
+
+  .studentHead{
+
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+  }
+
+
+  .summary{
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .grades{
+
+    grid-template-columns:
+      repeat(
+        2,
+        1fr
+      );
+
+  }
+
+
+  .studentName{
+
+    font-size:19px;
+
+  }
+
+
+  .behaviorDetails{
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+}
+
 </style>
+
 </head>
+
+
 <body>
+
+
 <div class="shell">
+
+
+<!-- =====================================
+     الهوية
+===================================== -->
+
 <header class="brand">
-<img class="logo" src="https://c.top4top.io/p_3906f6odb1.jpg" alt="شعار مدرسة أبو الدرداء">
+
+<img
+  class="logo"
+  src="https://c.top4top.io/p_3906f6odb1.jpg"
+  alt="شعار مدرسة أبو الدرداء"
+>
+
+
 <div class="brandtext">
-<div class="small">سلطنة عُمان · وزارة التربية والتعليم<br>المديرية العامة للتربية والتعليم بمحافظة الظاهرة</div>
-<div class="school">مدرسة أبو الدرداء للتعليم الأساسي (5–12)</div>
+
+<div class="small">
+
+سلطنة عُمان · وزارة التربية والتعليم
+
+<br>
+
+المديرية العامة للتربية والتعليم بمحافظة الظاهرة
+
 </div>
-<div class="portalBadge">بوابة ولي الأمر</div>
+
+
+<div class="school">
+
+مدرسة أبو الدرداء للتعليم الأساسي (5–12)
+
+</div>
+
+</div>
+
+
+<div class="portalBadge">
+
+بوابة ولي الأمر
+
+</div>
+
 </header>
+
 
 <div id="status"></div>
 
-<section id="loginView" class="hero">
+
+<!-- =====================================
+     تسجيل الدخول
+===================================== -->
+
+<section
+  id="loginView"
+  class="hero"
+>
+
+
 <div class="heroCopy">
-<div class="eyebrow"><span class="spark"></span> ABU DARDA PARENT PORTAL</div>
-<h1>نافذتك إلى رحلة ابنك التعليمية</h1>
-<p class="heroLead">متابعة أكاديمية موحدة تجمع درجات الطالب وملاحظات معلميه في مكان واحد؛ بصورة واضحة، أنيقة، وسهلة الوصول.</p>
+
+
+<div class="eyebrow">
+
+<span class="spark"></span>
+
+ABU DARDA PARENT PORTAL
+
+</div>
+
+
+<h1>
+
+نافذتك إلى رحلة ابنك التعليمية
+
+</h1>
+
+
+<p class="heroLead">
+
+متابعة رقمية موحدة تجمع التحصيل الدراسي
+وملاحظات المعلمين والسجل السلوكي للطالب
+في مكان واحد؛ بصورة واضحة، أنيقة،
+وسهلة الوصول.
+
+</p>
+
 
 <div class="vision">
-<div class="visionLabel">رؤيتنا المدرسية</div>
-<div class="visionText">جيلٌ مجيدٌ علميًا، متمكنٌ رقميًا، مبتكرٌ ومنافسٌ للمستقبل</div>
+
+<div class="visionLabel">
+
+رؤيتنا المدرسية
+
 </div>
+
+
+<div class="visionText">
+
+جيلٌ مجيدٌ علميًا، متمكنٌ رقميًا،
+مبتكرٌ ومنافسٌ للمستقبل
+
+</div>
+
+</div>
+
 
 <div class="features">
-<div class="feature"><span class="icon"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v17H6.5A2.5 2.5 0 0 0 4 22V5.5Z"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v17h4.5A2.5 2.5 0 0 1 20 22V5.5Z"/></svg></span> متابعة التحصيل</div>
-<div class="feature"><span class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/><path d="M8 9h8M8 13h5"/></svg></span> ملاحظات المعلمين</div>
-<div class="feature"><span class="icon"><svg viewBox="0 0 24 24"><path d="m12 3 1.3 4.2L17.5 9l-4.2 1.8L12 15l-1.3-4.2L6.5 9l4.2-1.8L12 3Z"/><path d="m19 15 .7 2.3L22 18l-2.3.7L19 21l-.7-2.3L16 18l2.3-.7L19 15Z"/></svg></span> تجربة رقمية حديثة</div>
+
+
+<div class="feature">
+
+<span class="icon">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v17H6.5A2.5 2.5 0 0 0 4 22V5.5Z"/>
+
+<path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v17h4.5A2.5 2.5 0 0 1 20 22V5.5Z"/>
+
+</svg>
+
+</span>
+
+متابعة التحصيل
+
 </div>
+
+
+<div class="feature">
+
+<span class="icon">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/>
+
+<path d="M8 9h8M8 13h5"/>
+
+</svg>
+
+</span>
+
+ملاحظات المعلمين
+
 </div>
+
+
+<div class="feature">
+
+<span class="icon">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M12 3 19 6v5c0 4.6-2.8 8.1-7 10-4.2-1.9-7-5.4-7-10V6l7-3Z"/>
+
+<path d="m9 12 2 2 4-5"/>
+
+</svg>
+
+</span>
+
+السجل السلوكي
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- =====================================
+     بطاقة الدخول
+===================================== -->
 
 <div class="login">
+
+
 <div class="loginTop">
-<div class="loginIcon"><span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span></div>
-<div><h2>الملف الأكاديمي للطالب</h2><p>أدخل الرقم المدني لعرض أحدث البيانات المرصودة.</p></div>
+
+
+<div class="loginIcon">
+
+<span class="icon">
+
+<svg viewBox="0 0 24 24">
+
+<circle
+  cx="12"
+  cy="8"
+  r="4"
+/>
+
+<path d="M4 21a8 8 0 0 1 16 0"/>
+
+</svg>
+
+</span>
+
 </div>
-<label for="civilId">الرقم المدني للطالب</label>
+
+
+<div>
+
+<h2>
+
+الملف التعليمي للطالب
+
+</h2>
+
+<p>
+
+أدخل الرقم المدني لعرض أحدث البيانات المرصودة.
+
+</p>
+
+</div>
+
+</div>
+
+
+<label for="civilId">
+
+الرقم المدني للطالب
+
+</label>
+
+
 <div class="inputWrap">
-<span class="inputIcon icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8" cy="11" r="2"/><path d="M6 16c.7-1.4 3.3-1.4 4 0M13 10h5M13 14h4"/></svg></span>
-<input id="civilId" class="input" inputmode="numeric" autocomplete="off" placeholder="مثال: 3976000">
+
+
+<span class="inputIcon icon">
+
+<svg viewBox="0 0 24 24">
+
+<rect
+  x="3"
+  y="5"
+  width="18"
+  height="14"
+  rx="2"
+/>
+
+<circle
+  cx="8"
+  cy="11"
+  r="2"
+/>
+
+<path d="M6 16c.7-1.4 3.3-1.4 4 0M13 10h5M13 14h4"/>
+
+</svg>
+
+</span>
+
+
+<input
+  id="civilId"
+  class="input"
+  inputmode="numeric"
+  autocomplete="off"
+  placeholder="أدخل الرقم المدني للطالب"
+>
+
 </div>
-<button id="loginBtn" class="primary full" onclick="loadReport()">عرض الملف الأكاديمي</button>
-<div class="security"><span class="icon"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><span>هذه الخدمة مخصصة للمتابعة الأكاديمية. يرجى المحافظة على خصوصية بيانات الطالب.</span></div>
+
+
+<button
+  id="loginBtn"
+  class="primary full"
+  onclick="loadReport()"
+>
+
+عرض الملف التعليمي
+
+</button>
+
+
+<div class="security">
+
+
+<span class="icon">
+
+<svg viewBox="0 0 24 24">
+
+<rect
+  x="5"
+  y="10"
+  width="14"
+  height="11"
+  rx="2"
+/>
+
+<path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+
+</svg>
+
+</span>
+
+
+<span>
+
+هذه الخدمة مخصصة لمتابعة بيانات الطالب.
+يرجى المحافظة على خصوصية البيانات.
+
+</span>
+
+
 </div>
+
+</div>
+
 </section>
 
-<section id="reportView" class="hidden">
+
+<!-- =====================================
+     التقرير
+===================================== -->
+
+<section
+  id="reportView"
+  class="hidden"
+>
+
+
 <div class="card studentCard">
+
+
 <div class="studentHead">
+
+
 <div class="identity">
-<div class="avatar"><span class="icon"><svg viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5L2 9Z"/><path d="M6 11.5V16c3 3 9 3 12 0v-4.5M22 9v6"/></svg></span></div>
-<div><div id="studentName" class="studentName"></div><div id="studentMeta" class="meta"></div></div>
+
+
+<div class="avatar">
+
+<span class="icon">
+
+<svg viewBox="0 0 24 24">
+
+<path d="m2 9 10-5 10 5-10 5L2 9Z"/>
+
+<path d="M6 11.5V16c3 3 9 3 12 0v-4.5M22 9v6"/>
+
+</svg>
+
+</span>
+
 </div>
-<button class="logout" onclick="logout()">بحث عن طالب آخر</button>
+
+
+<div>
+
+<div
+  id="studentName"
+  class="studentName"
+></div>
+
+<div
+  id="studentMeta"
+  class="meta"
+></div>
+
 </div>
+
+</div>
+
+
+<button
+  class="logout"
+  onclick="logout()"
+>
+
+بحث عن طالب آخر
+
+</button>
+
+</div>
+
+
 <div class="summary">
-<div class="stat"><div class="statIcon"><span class="icon"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v17H6.5A2.5 2.5 0 0 0 4 22V5.5Z"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v17h4.5A2.5 2.5 0 0 1 20 22V5.5Z"/></svg></span></div><div><strong id="subjectCount">0</strong><span>المواد المعروضة</span></div></div>
-<div class="stat"><div class="statIcon"><span class="icon"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span></div><div><strong id="gradeCount">0</strong><span>درجات مرصودة</span></div></div>
-<div class="stat"><div class="statIcon"><span class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/><path d="M8 9h8M8 13h5"/></svg></span></div><div><strong id="noteCount">0</strong><span>ملاحظات المعلمين</span></div></div>
+
+
+<div class="stat">
+
+<div class="statIcon">
+
+<span class="icon">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v17H6.5A2.5 2.5 0 0 0 4 22V5.5Z"/>
+
+<path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v17h4.5A2.5 2.5 0 0 1 20 22V5.5Z"/>
+
+</svg>
+
+</span>
+
 </div>
+
+
+<div>
+
+<strong id="subjectCount">
+0
+</strong>
+
+<span>
+المواد المعروضة
+</span>
+
 </div>
-<div class="sectionTitle"><span class="icon"><svg viewBox="0 0 24 24"><path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/></svg></span> السجل الأكاديمي حسب المواد</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="statIcon">
+
+<span class="icon">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>
+
+</svg>
+
+</span>
+
+</div>
+
+
+<div>
+
+<strong id="gradeCount">
+0
+</strong>
+
+<span>
+درجات مرصودة
+</span>
+
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="statIcon">
+
+<span class="icon">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/>
+
+<path d="M8 9h8M8 13h5"/>
+
+</svg>
+
+</span>
+
+</div>
+
+
+<div>
+
+<strong id="noteCount">
+0
+</strong>
+
+<span>
+ملاحظات المعلمين
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="sectionTitle">
+
+
+<span class="icon">
+
+<svg viewBox="0 0 24 24">
+
+<path d="m12 2 9 5-9 5-9-5 9-5Z"/>
+
+<path d="m3 12 9 5 9-5M3 17l9 5 9-5"/>
+
+</svg>
+
+</span>
+
+
+السجل التعليمي للطالب
+
+</div>
+
+
 <div id="subjects"></div>
-<div class="footerVision"><strong>رؤية مدرسة أبو الدرداء:</strong> جيلٌ مجيدٌ علميًا، متمكنٌ رقميًا، مبتكرٌ ومنافسٌ للمستقبل</div>
-<div class="notice">تعكس البيانات ما تم رصده في سجلات المواد حتى لحظة عرض الصفحة.</div>
-</section>
+
+
+<div class="footerVision">
+
+<strong>
+رؤية مدرسة أبو الدرداء:
+</strong>
+
+جيلٌ مجيدٌ علميًا، متمكنٌ رقميًا،
+مبتكرٌ ومنافسٌ للمستقبل
+
 </div>
+
+
+<div class="notice">
+
+تعكس البيانات ما تم رصده في سجلات المدرسة
+حتى لحظة عرض الصفحة.
+
+</div>
+
+
+</section>
+
+
+</div>
+
 
 <script>
-const API_URL="https://script.google.com/macros/s/AKfycbxQe9PhtTcVqSdS9B4BOtc08zCu9Zhpa7BknTsxUa6b2kIKWPi1RtKKswRs2GAWU8CNvg/exec";
-const $=id=>document.getElementById(id);
-const ICONS={
-book:`<svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v17H6.5A2.5 2.5 0 0 0 4 22V5.5Z"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v17h4.5A2.5 2.5 0 0 1 20 22V5.5Z"/></svg>`,message:`<svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/><path d="M8 9h8M8 13h5"/></svg>`,chart:`<svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>`
+
+
+// ===========================================
+// رابط API
+// ===========================================
+
+const API_URL =
+"https://script.google.com/macros/s/AKfycbxQe9PhtTcVqSdS9B4BOtc08zCu9Zhpa7BknTsxUa6b2kIKWPi1RtKKswRs2GAWU8CNvg/exec";
+
+
+const $ =
+  id =>
+    document.getElementById(
+      id
+    );
+
+
+// ===========================================
+// الأيقونات
+// ===========================================
+
+const ICONS = {
+
+
+  book:`
+
+  <svg viewBox="0 0 24 24">
+
+  <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v17H6.5A2.5 2.5 0 0 0 4 22V5.5Z"/>
+
+  <path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v17h4.5A2.5 2.5 0 0 1 20 22V5.5Z"/>
+
+  </svg>
+
+  `,
+
+
+  message:`
+
+  <svg viewBox="0 0 24 24">
+
+  <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/>
+
+  <path d="M8 9h8M8 13h5"/>
+
+  </svg>
+
+  `,
+
+
+  chart:`
+
+  <svg viewBox="0 0 24 24">
+
+  <path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>
+
+  </svg>
+
+  `,
+
+
+  behavior:`
+
+  <svg viewBox="0 0 24 24">
+
+  <path d="M12 3 19 6v5c0 4.6-2.8 8.1-7 10-4.2-1.9-7-5.4-7-10V6l7-3Z"/>
+
+  <path d="m9 12 2 2 4-5"/>
+
+  </svg>
+
+  `
+
 };
-function status(msg,type="ok"){ $("status").innerHTML=msg?`<div class="status ${type}">${msg}</div>`:""; }
-function escapeHtml(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));}
-async function callApi(payload){
- const r=await fetch(API_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(payload)});
- const text=await r.text(); try{return JSON.parse(text)}catch(e){throw new Error("استجابة الخدمة غير صالحة. تحقق من نشر Apps Script.");}
+
+
+// ===========================================
+// الرسائل
+// ===========================================
+
+function status(
+  msg,
+  type = "ok"
+){
+
+  $("status").innerHTML =
+    msg
+      ? `<div class="status ${type}">${msg}</div>`
+      : "";
+
 }
-async function loadReport(){
- const civilId=$("civilId").value.trim().replace(/\D/g,"");
- if(!civilId)return status("يرجى إدخال الرقم المدني للطالب.","err");
- const btn=$("loginBtn");btn.disabled=true;btn.innerHTML='<span class="loader"></span> جاري تجهيز الملف الأكاديمي';
- status("");
- try{
-  const data=await callApi({action:"student",civilId});
-  if(!data.success)throw new Error(data.message||"تعذر العثور على بيانات الطالب.");
-  renderReport(data);$("loginView").classList.add("hidden");$("reportView").classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"});
- }catch(e){status(escapeHtml(e.message||"تعذر الاتصال بالخدمة."),"err")}
- finally{btn.disabled=false;btn.textContent="عرض الملف الأكاديمي"}
+
+
+// ===========================================
+// حماية النصوص
+// ===========================================
+
+function escapeHtml(v){
+
+  return String(
+    v ?? ""
+  )
+  .replace(
+    /[&<>"']/g,
+    c => ({
+      "&":"&amp;",
+      "<":"&lt;",
+      ">":"&gt;",
+      '"':"&quot;",
+      "'":"&#039;"
+    }[c])
+  );
+
 }
-function subjectAccent(i){return ["#16827d","#b68a39","#3f6f96","#7a6598","#3d8563","#9b645b"][i%6]}
-function renderReport(data){
- const s=data.student||{};$("studentName").textContent=s.name||"الطالب";
- const masked=s.civilId?("••••"+String(s.civilId).slice(-4)):"—";
- $("studentMeta").textContent=`الصف/الشعبة: ${s.sheetName||"—"} · الرقم المدني: ${masked}`;
- const subjects=data.subjects||[],box=$("subjects");box.innerHTML="";
- let gradeCount=0,noteCount=0,successCount=0;
- subjects.forEach((sub,i)=>{
-  const card=document.createElement("div");card.className="card subject";card.style.setProperty("--subjectAccent",subjectAccent(i));
-  if(!sub.success){
-   card.innerHTML=`<div class="subjectTitle"><div class="subjectName"><div class="subjectIcon"><span class="icon">${ICONS.book}</span></div><h3>${escapeHtml(sub.subject||"مادة")}</h3></div><span class="pill">غير متاح</span></div><div class="empty">${escapeHtml(sub.error||"لا توجد بيانات متاحة حاليًا")}</div>`;
-   box.appendChild(card);return;
+
+
+// ===========================================
+// API
+// ===========================================
+
+async function callApi(
+  payload
+){
+
+  const r =
+    await fetch(
+
+      API_URL,
+
+      {
+
+        method:
+          "POST",
+
+        headers:{
+          "Content-Type":
+            "text/plain;charset=utf-8"
+        },
+
+        body:
+          JSON.stringify(
+            payload
+          )
+
+      }
+
+    );
+
+
+  const text =
+    await r.text();
+
+
+  try{
+
+    return JSON.parse(
+      text
+    );
+
+  }catch(e){
+
+    throw new Error(
+      "استجابة الخدمة غير صالحة. تحقق من نشر Apps Script."
+    );
+
   }
-  successCount++;const assessments=sub.assessments||[];
-  gradeCount+=assessments.filter(a=>String(a.value??"").trim()!=="").length;
-  if(String(sub.note||"").trim())noteCount++;
-  const grades=assessments.map(a=>{const val=String(a.value??"").trim();return `<div class="grade"><div class="gradeName">${escapeHtml(a.name)}</div><div class="gradeValue ${val?"":"emptyValue"}">${escapeHtml(val||"—")}</div></div>`}).join("");
-  card.innerHTML=`<div class="subjectTitle"><div class="subjectName"><div class="subjectIcon"><span class="icon">${ICONS.book}</span></div><h3>${escapeHtml(sub.subject)}</h3></div><span class="pill">سجل المادة</span></div>
-  <div class="grades">${grades||'<div class="empty">لا توجد أدوات تقويم معروضة.</div>'}</div>
-  <div class="note ${sub.note?"":"noNote"}"><span class="icon">${ICONS.message}</span><div><strong>ملاحظة المعلم</strong><br>${escapeHtml(sub.note||"لا توجد ملاحظة مرصودة حاليًا.")}</div></div>`;
-  box.appendChild(card);
- });
- if(!subjects.length)box.innerHTML='<div class="card empty">لم يتم العثور على مواد مرتبطة بهذا الصف والشعبة.</div>';
- $("subjectCount").textContent=successCount;$("gradeCount").textContent=gradeCount;$("noteCount").textContent=noteCount;
+
 }
-function logout(){$("reportView").classList.add("hidden");$("loginView").classList.remove("hidden");$("civilId").value="";$("subjects").innerHTML="";status("");window.scrollTo({top:0,behavior:"smooth"})}
-$("civilId").addEventListener("keydown",e=>{if(e.key==="Enter")loadReport()});
+
+
+// ===========================================
+// تحميل التقرير
+// ===========================================
+
+async function loadReport(){
+
+  const civilId =
+    $("civilId")
+      .value
+      .trim()
+      .replace(
+        /\D/g,
+        ""
+      );
+
+
+  if(!civilId){
+
+    return status(
+      "يرجى إدخال الرقم المدني للطالب.",
+      "err"
+    );
+
+  }
+
+
+  const btn =
+    $("loginBtn");
+
+
+  btn.disabled =
+    true;
+
+
+  btn.innerHTML =
+    '<span class="loader"></span> جاري تجهيز الملف التعليمي';
+
+
+  status("");
+
+
+  try{
+
+
+    const data =
+      await callApi({
+
+        action:
+          "student",
+
+        civilId:
+          civilId
+
+      });
+
+
+    if(!data.success){
+
+      throw new Error(
+        data.message ||
+        "تعذر العثور على بيانات الطالب."
+      );
+
+    }
+
+
+    renderReport(
+      data
+    );
+
+
+    $("loginView")
+      .classList
+      .add(
+        "hidden"
+      );
+
+
+    $("reportView")
+      .classList
+      .remove(
+        "hidden"
+      );
+
+
+    window.scrollTo({
+
+      top:0,
+
+      behavior:
+        "smooth"
+
+    });
+
+
+  }catch(e){
+
+
+    status(
+      escapeHtml(
+        e.message ||
+        "تعذر الاتصال بالخدمة."
+      ),
+      "err"
+    );
+
+
+  }finally{
+
+
+    btn.disabled =
+      false;
+
+
+    btn.textContent =
+      "عرض الملف التعليمي";
+
+  }
+
+}
+
+
+// ===========================================
+// لون المادة
+// ===========================================
+
+function subjectAccent(i){
+
+  return [
+
+    "#16827d",
+    "#b68a39",
+    "#3f6f96",
+    "#7a6598",
+    "#3d8563",
+    "#9b645b"
+
+  ][
+    i % 6
+  ];
+
+}
+
+
+// ===========================================
+// إنشاء بطاقة سجل السلوك
+// ===========================================
+
+function renderBehaviorCard(
+  sub
+){
+
+  const card =
+    document.createElement(
+      "div"
+    );
+
+
+  card.className =
+    "card subject behaviorCard";
+
+
+  card.style.setProperty(
+    "--subjectAccent",
+    "#16827d"
+  );
+
+
+  // =========================================
+  // تعذر قراءة السجل
+  // =========================================
+
+  if(!sub.success){
+
+    card.innerHTML = `
+
+      <div class="subjectTitle">
+
+        <div class="subjectName">
+
+          <div class="subjectIcon">
+
+            <span class="icon">
+
+              ${ICONS.behavior}
+
+            </span>
+
+          </div>
+
+          <h3>
+            سجل السلوك
+          </h3>
+
+        </div>
+
+
+        <span class="pill">
+          غير متاح
+        </span>
+
+      </div>
+
+
+      <div class="empty">
+
+        ${escapeHtml(
+          sub.error ||
+          "لا توجد بيانات متاحة حاليًا"
+        )}
+
+      </div>
+
+    `;
+
+
+    return card;
+
+  }
+
+
+  const behaviors =
+    sub.behaviors || [];
+
+
+  let content =
+    "";
+
+
+  // =========================================
+  // لا توجد سلوكيات
+  // =========================================
+
+  if(!behaviors.length){
+
+    content = `
+
+      <div class="behaviorClear">
+
+        <div class="behaviorClearIcon">
+          ✓
+        </div>
+
+        <div>
+
+          لا توجد سلوكيات مسجلة
+          للطالب حاليًا.
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+  // =========================================
+  // توجد سلوكيات
+  // =========================================
+
+  else{
+
+    content = `
+
+      <div class="behaviorList">
+
+        ${
+
+          behaviors
+            .map(
+              item => `
+
+                <div class="behaviorItem">
+
+
+                  <div class="behaviorTop">
+
+                    <div class="behaviorNumber">
+
+                      السلوك
+                      ${escapeHtml(
+                        item.number
+                      )}
+
+                    </div>
+
+
+                    <div class="behaviorDate">
+
+                      ${escapeHtml(
+                        item.date ||
+                        "بدون تاريخ"
+                      )}
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="behaviorText">
+
+                    ${escapeHtml(
+                      item.behavior ||
+                      "—"
+                    )}
+
+                  </div>
+
+
+                  <div class="behaviorDetails">
+
+
+                    <div class="behaviorDetail">
+
+                      <span class="behaviorDetailLabel">
+
+                        الإجراء المتخذ
+
+                      </span>
+
+
+                      <div class="behaviorDetailValue">
+
+                        ${escapeHtml(
+                          item.action ||
+                          "—"
+                        )}
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="behaviorDetail">
+
+                      <span class="behaviorDetailLabel">
+
+                        مصدر السلوك
+
+                      </span>
+
+
+                      <div class="behaviorDetailValue">
+
+                        ${escapeHtml(
+                          item.source ||
+                          "—"
+                        )}
+
+                      </div>
+
+                    </div>
+
+
+                  </div>
+
+
+                </div>
+
+              `
+            )
+            .join("")
+
+        }
+
+      </div>
+
+    `;
+
+  }
+
+
+  card.innerHTML = `
+
+    <div class="subjectTitle">
+
+
+      <div class="subjectName">
+
+
+        <div class="subjectIcon">
+
+          <span class="icon">
+
+            ${ICONS.behavior}
+
+          </span>
+
+        </div>
+
+
+        <h3>
+
+          سجل السلوك
+
+        </h3>
+
+
+      </div>
+
+
+      <span class="pill">
+
+        ${
+          behaviors.length
+            ? behaviors.length +
+              " سلوك مسجل"
+            : "السجل السلوكي"
+        }
+
+      </span>
+
+
+    </div>
+
+
+    ${content}
+
+  `;
+
+
+  return card;
+
+}
+
+
+// ===========================================
+// عرض التقرير
+// ===========================================
+
+function renderReport(
+  data
+){
+
+  const s =
+    data.student || {};
+
+
+  $("studentName").textContent =
+    s.name ||
+    "الطالب";
+
+
+  const masked =
+    s.civilId
+      ? (
+          "••••" +
+          String(
+            s.civilId
+          ).slice(-4)
+        )
+      : "—";
+
+
+  $("studentMeta").textContent =
+    `الصف/الشعبة: ${s.sheetName || "—"} · الرقم المدني: ${masked}`;
+
+
+  const subjects =
+    data.subjects || [];
+
+
+  const box =
+    $("subjects");
+
+
+  box.innerHTML =
+    "";
+
+
+  let gradeCount =
+    0;
+
+
+  let noteCount =
+    0;
+
+
+  let successCount =
+    0;
+
+
+  subjects.forEach(
+    (sub,i) => {
+
+
+      // ======================================
+      // سجل السلوك
+      // ======================================
+
+      if(
+        sub.recordType ===
+        "behavior"
+      ){
+
+        const behaviorCard =
+          renderBehaviorCard(
+            sub
+          );
+
+
+        box.appendChild(
+          behaviorCard
+        );
+
+
+        /*
+          سجل السلوك لا يدخل في:
+          - عدد المواد
+          - عدد الدرجات
+          - ملاحظات المعلمين
+        */
+
+        return;
+
+      }
+
+
+      // ======================================
+      // المادة الأكاديمية
+      // ======================================
+
+      const card =
+        document.createElement(
+          "div"
+        );
+
+
+      card.className =
+        "card subject";
+
+
+      card.style.setProperty(
+        "--subjectAccent",
+        subjectAccent(i)
+      );
+
+
+      // ======================================
+      // المادة غير متاحة
+      // ======================================
+
+      if(!sub.success){
+
+        card.innerHTML = `
+
+          <div class="subjectTitle">
+
+
+            <div class="subjectName">
+
+
+              <div class="subjectIcon">
+
+                <span class="icon">
+
+                  ${ICONS.book}
+
+                </span>
+
+              </div>
+
+
+              <h3>
+
+                ${escapeHtml(
+                  sub.subject ||
+                  "مادة"
+                )}
+
+              </h3>
+
+
+            </div>
+
+
+            <span class="pill">
+
+              غير متاح
+
+            </span>
+
+
+          </div>
+
+
+          <div class="empty">
+
+            ${escapeHtml(
+              sub.error ||
+              "لا توجد بيانات متاحة حاليًا"
+            )}
+
+          </div>
+
+        `;
+
+
+        box.appendChild(
+          card
+        );
+
+
+        return;
+
+      }
+
+
+      successCount++;
+
+
+      const assessments =
+        sub.assessments || [];
+
+
+      gradeCount +=
+        assessments
+          .filter(
+            a =>
+              String(
+                a.value ?? ""
+              )
+              .trim() !== ""
+          )
+          .length;
+
+
+      if(
+        String(
+          sub.note || ""
+        ).trim()
+      ){
+
+        noteCount++;
+
+      }
+
+
+      const grades =
+        assessments
+          .map(
+            a => {
+
+              const val =
+                String(
+                  a.value ?? ""
+                )
+                .trim();
+
+
+              return `
+
+                <div class="grade">
+
+                  <div class="gradeName">
+
+                    ${escapeHtml(
+                      a.name
+                    )}
+
+                  </div>
+
+
+                  <div
+                    class="
+                      gradeValue
+                      ${
+                        val
+                          ? ""
+                          : "emptyValue"
+                      }
+                    "
+                  >
+
+                    ${escapeHtml(
+                      val ||
+                      "—"
+                    )}
+
+                  </div>
+
+                </div>
+
+              `;
+
+            }
+          )
+          .join("");
+
+
+      card.innerHTML = `
+
+        <div class="subjectTitle">
+
+
+          <div class="subjectName">
+
+
+            <div class="subjectIcon">
+
+              <span class="icon">
+
+                ${ICONS.book}
+
+              </span>
+
+            </div>
+
+
+            <h3>
+
+              ${escapeHtml(
+                sub.subject
+              )}
+
+            </h3>
+
+
+          </div>
+
+
+          <span class="pill">
+
+            سجل المادة
+
+          </span>
+
+
+        </div>
+
+
+        <div class="grades">
+
+          ${
+            grades ||
+            '<div class="empty">لا توجد أدوات تقويم معروضة.</div>'
+          }
+
+        </div>
+
+
+        <div
+          class="
+            note
+            ${
+              sub.note
+                ? ""
+                : "noNote"
+            }
+          "
+        >
+
+
+          <span class="icon">
+
+            ${ICONS.message}
+
+          </span>
+
+
+          <div>
+
+
+            <strong>
+
+              ملاحظة المعلم
+
+            </strong>
+
+
+            <br>
+
+
+            ${escapeHtml(
+              sub.note ||
+              "لا توجد ملاحظة مرصودة حاليًا."
+            )}
+
+
+          </div>
+
+
+        </div>
+
+      `;
+
+
+      box.appendChild(
+        card
+      );
+
+    }
+  );
+
+
+  if(!subjects.length){
+
+    box.innerHTML =
+
+      '<div class="card empty">لم يتم العثور على سجلات مرتبطة بهذا الصف والشعبة.</div>';
+
+  }
+
+
+  $("subjectCount").textContent =
+    successCount;
+
+
+  $("gradeCount").textContent =
+    gradeCount;
+
+
+  $("noteCount").textContent =
+    noteCount;
+
+}
+
+
+// ===========================================
+// خروج / طالب آخر
+// ===========================================
+
+function logout(){
+
+  $("reportView")
+    .classList
+    .add(
+      "hidden"
+    );
+
+
+  $("loginView")
+    .classList
+    .remove(
+      "hidden"
+    );
+
+
+  $("civilId").value =
+    "";
+
+
+  $("subjects").innerHTML =
+    "";
+
+
+  status("");
+
+
+  window.scrollTo({
+
+    top:0,
+
+    behavior:
+      "smooth"
+
+  });
+
+}
+
+
+// ===========================================
+// Enter
+// ===========================================
+
+$("civilId")
+  .addEventListener(
+    "keydown",
+    e => {
+
+      if(
+        e.key ===
+        "Enter"
+      ){
+
+        loadReport();
+
+      }
+
+    }
+  );
+
 </script>
+
+
 </body>
+
 </html>
